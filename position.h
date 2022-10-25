@@ -15,6 +15,7 @@
 #include <cmath>
 #include "velocity.h"
 #include "constants.h"
+#include "assert.h"
 
 class TestPosition;
 class Acceleration;
