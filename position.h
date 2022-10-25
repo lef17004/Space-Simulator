@@ -1,6 +1,6 @@
 /***********************************************************************
  * Header File:
- *    Point : The representation of a position 
+ *    Point : The representation of a position
  * Author:
  *    Br. Helfrich
  * Summary:
@@ -11,16 +11,24 @@
 
 #pragma once
 
-#include <iostream> 
+#include <iostream>
 #include <cmath>
+#include "velocity.h"
+#include "constants.h"
 
 class TestPosition;
 class Acceleration;
 class Velocity;
 
+
+enum Quadrant
+{
+   Quad1, Quad2, Quad3, Quad4, INVALID
+};
+
 /*********************************************
  * Position
- * A single position on the field in Meters  
+ * A single position on the field in Meters
  *********************************************/
 class Position
 {
@@ -32,13 +40,13 @@ public:
    Position(double x, double y);
    Position(const Position & pt) : x(pt.x), y(pt.y) {}
    Position& operator = (const Position& pt);
-
+   
    // getters
    double getMetersX()       const { return x;                    }
    double getMetersY()       const { return y;                    }
    double getPixelsX()       const { return x / metersFromPixels; }
    double getPixelsY()       const { return y / metersFromPixels; }
-
+   
    // setters
    void setMeters(double xMeters, double yMeters) {x = xMeters; y = yMeters; }
    void setMetersX(double xMeters)       { x = xMeters;           }
@@ -49,14 +57,30 @@ public:
    void addMetersY(double dyMeters)      { setMetersY(getMetersY() + dyMeters);     }
    void addPixelsX(double dxPixels)      { setPixelsX(getPixelsX() + dxPixels);     }
    void addPixelsY(double dyPixels)      { setPixelsY(getPixelsY() + dyPixels);     }
-
+   
    // deal with the ratio of meters to pixels
    void setZoom(double metersFromPixels)
    {
       this->metersFromPixels = metersFromPixels;
    }
    double getZoom() const { return metersFromPixels; }
-
+   
+   Quadrant getQuadrant()
+   {
+      if (x >= 0 && y >= 0)
+         return Quad1;
+      if (x <= 0 && y >= 0)
+         return Quad2;
+      if (x <= 0 && y <= 0)
+         return Quad3;
+      if (x >= 0 && y <= 0)
+         return Quad4;
+      assert(false);
+      return INVALID;
+   }
+   
+   void add(Velocity velocity);
+   
 private:
    double x;                 // horizontal position
    double y;                 // vertical position

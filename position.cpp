@@ -37,19 +37,26 @@ std::ostream& operator << (std::ostream& out, const Position& pt)
    out << "(" << pt.getMetersX() << "m , " << pt.getMetersY() << "m)";
    return out;
 }
-   
+
 /*******************************************
-* POSITION extraction
-*       Prompt for coordinates
-******************************************/
+ * POSITION extraction
+ *       Prompt for coordinates
+ ******************************************/
 std::istream& operator >> (std::istream& in, Position& pt)
 {
    double x;
    double y;
    in >> x >> y;
-
+   
    pt.setMetersX(x);
    pt.setMetersY(y);
-
+   
    return in;
+}
+
+
+void Position::add(Velocity velocity)
+{
+   setMetersX(getMetersX() + velocity.getX() * TIME);
+   setMetersY(getMetersY() + velocity.getY() * TIME);
 }
