@@ -16,6 +16,7 @@
 #include "velocity.h"
 #include "constants.h"
 #include "acceleration.h"
+#include "assert.h"
 
 class TestPosition;
 class Acceleration;
