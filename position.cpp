@@ -60,3 +60,10 @@ void Position::add(Velocity velocity)
    setMetersX(getMetersX() + velocity.getX() * TIME);
    setMetersY(getMetersY() + velocity.getY() * TIME);
 }
+
+void Position::add(Velocity velocity, Acceleration acceleration)
+{
+   setMetersX(getMetersX() + (velocity.getX() * TIME) + (0.5 * acceleration.getX() * TIME * TIME));
+   setMetersY(getMetersY() + (velocity.getY() * TIME) + (0.5 * acceleration.getY() * TIME * TIME));
+
+}

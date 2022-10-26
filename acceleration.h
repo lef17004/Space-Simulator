@@ -15,8 +15,6 @@ private:
    double ddx;
    double ddy;
    
-   void setDirection(Position position);
-   
 public:
    Acceleration(): ddx(0), ddy(0) {}
    Acceleration(double ddx, double ddy): ddx(ddx), ddy(ddy) {}

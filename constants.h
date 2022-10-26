@@ -7,5 +7,6 @@
 
 #pragma once
 const int TIME = 48;
+//const int TIME = 500;
 const double EARTH_RADIUS = 6378000.0;
 const double GRAVITY_SEA_LEVEL = -9.80665;

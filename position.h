@@ -15,6 +15,7 @@
 #include <cmath>
 #include "velocity.h"
 #include "constants.h"
+#include "acceleration.h"
 
 class TestPosition;
 class Acceleration;
@@ -46,6 +47,7 @@ public:
    double getMetersY()       const { return y;                    }
    double getPixelsX()       const { return x / metersFromPixels; }
    double getPixelsY()       const { return y / metersFromPixels; }
+   double getTotalMeters()   const { return sqrt((getMetersX() * getMetersX()) + (getMetersY() * getMetersY())); }
    
    // setters
    void setMeters(double xMeters, double yMeters) {x = xMeters; y = yMeters; }
@@ -80,6 +82,7 @@ public:
    }
    
    void add(Velocity velocity);
+   void add(Velocity velocity, Acceleration acceletation);
    
 private:
    double x;                 // horizontal position
