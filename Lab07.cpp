@@ -36,7 +36,6 @@ public:
    {
       position = Position(21082000, 36515095);
       velocity = Velocity(-2685.0, 1550.0);
-      //angle = 0.523599;
    }
    
    void advance()
