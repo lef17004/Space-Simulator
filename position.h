@@ -68,19 +68,6 @@ public:
    }
    double getZoom() const { return metersFromPixels; }
    
-   Quadrant getQuadrant()
-   {
-      if (x >= 0 && y >= 0)
-         return Quad1;
-      if (x <= 0 && y >= 0)
-         return Quad2;
-      if (x <= 0 && y <= 0)
-         return Quad3;
-      if (x >= 0 && y <= 0)
-         return Quad4;
-      assert(false);
-      return INVALID;
-   }
    
    void add(Velocity velocity);
    void add(Velocity velocity, Acceleration acceletation);

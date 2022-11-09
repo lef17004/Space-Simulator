@@ -10,13 +10,6 @@
 
 Acceleration::Acceleration(double total, double angle, Position position)
 {
-//   ddx = total * cos(angle);
-//   ddy = total * sin(angle);
-   
-   // Test
-   
    ddx = -total * sin(angle);
    ddy = -total * cos(angle);
-   int x;
-  //setDirection(position);
 }
