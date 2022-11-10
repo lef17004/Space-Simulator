@@ -60,6 +60,7 @@
 		33332910291B1B11006814A9 /* lifespan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lifespan.h; sourceTree = "<group>"; };
 		33332912291B1B5C006814A9 /* parts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parts.cpp; sourceTree = "<group>"; };
 		33332913291B1B5C006814A9 /* parts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parts.h; sourceTree = "<group>"; };
+		33332915291C900A006814A9 /* testSimulatorObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSimulatorObject.h; sourceTree = "<group>"; };
 		33DCC6D629087EFB000D6FD5 /* acceleration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = acceleration.h; sourceTree = "<group>"; };
 		33DCC6D729087EFB000D6FD5 /* acceleration.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = acceleration.cpp; sourceTree = "<group>"; };
 		33DCC6D829087EFB000D6FD5 /* velocity.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = velocity.h; sourceTree = "<group>"; };
@@ -150,6 +151,7 @@
 				C11C7EA725780B5C00EA4B2E /* test.cpp */,
 				C11C7EAC25780B6000EA4B2E /* test.h */,
 				C11C7EAF25780B6500EA4B2E /* testPosition.h */,
+				33332915291C900A006814A9 /* testSimulatorObject.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
