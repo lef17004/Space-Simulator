@@ -170,6 +170,7 @@
     <ClInclude Include="simulator.h" />
     <ClInclude Include="simulatorObject.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="testCollisionBody.h" />
     <ClInclude Include="testPosition.h" />
     <ClInclude Include="testSimulatorObject.h" />
     <ClInclude Include="uiDraw.h" />
