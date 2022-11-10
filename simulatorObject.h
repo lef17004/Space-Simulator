@@ -52,4 +52,6 @@ public:
    double getHeight() { return 0; }
    
    void kill() {}
+
+   friend class TestSimulatorObject;
 };
