@@ -53,5 +53,5 @@ public:
    
    void kill() {}
 
-   friend class TestSimulationObject;
+   friend class TestSimulatorObject;
 };

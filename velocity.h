@@ -29,6 +29,8 @@ public:
    
    double getX() { return dx; }
    double getY() { return dy; }
+   void setX(double x) {}
+   void setY(double y) {}
    
    Velocity & operator == (Velocity & rhs)
    {
