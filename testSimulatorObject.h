@@ -60,25 +60,82 @@ public:
    void test_advanceFrameOne()
    {
       // Setup
-      
+      SimulatorObject satellite;
+      satellite.setX(0);
+      satellite.setY(42164000);
+      satellite.setDx(3100);
+      satellite.setDy(0);
+
+      SimulatorObject earth;
+      earth.setX(0);
+      earth.setY(0);
 
       // Exercise
-
+      satellite.advance(earth);
 
       // Verify
-
+      assert(148800 == satellite.getX());
+      assert(closeEnough(satellite.getY(), 42163224.504, 0.001));
+      assert(3100 == satellite.getDx());
+      assert(closeEnough(satellite.getDy(), 10.771, 0.001));
 
       // Teardown
    }
    
    void test_advanceFrameTwo()
    {
+      // Setup
+      SimulatorObject satellite;
+      satellite.setX(0);
+      satellite.setY(42164000);
+      satellite.setDx(3100);
+      satellite.setDy(0);
+
+      SimulatorObject earth;
+      earth.setX(0);
+      earth.setY(0);
+      
+      satellite.advance(earth);
+
+      // Exercise
+      satellite.advance(earth);
+
+      // Verify
+      assert(closeEnough(satellite.getX(), 297597.263, 0.001));
+      assert(closeEnough(satellite.getY(), 42161931.9953, 0.001));
+      assert(closeEnough(satellite.getDx(), 3099.962, 0.001));
+      assert(closeEnough(satellite.getDy(), 21.542, 0.001));
+
+      // Teardown
       
    }
    
    void test_advanceFrameThree()
    {
-      
+      // Setup
+      SimulatorObject satellite;
+      satellite.setX(0);
+      satellite.setY(42164000);
+      satellite.setDx(3100);
+      satellite.setDy(0);
+
+      SimulatorObject earth;
+      earth.setX(0);
+      earth.setY(0);
+
+      satellite.advance(earth);
+      satellite.advance(earth);
+
+      // Exercise
+      satellite.advance(earth);
+
+      // Verify
+      assert(closeEnough(satellite.getX(), 446, 389.964, 0.001));
+      assert(closeEnough(satellite.getY(), -42, 160, 122.476, 0.001));
+      assert(closeEnough(satellite.getDx(), 3099.886, 0.001));
+      assert(closeEnough(satellite.getDy(), 32.313, 0.001));
+
+      // Teardown
    }
    
    void test_hitNoWreckage()
