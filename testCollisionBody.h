@@ -34,7 +34,6 @@ public:
 
       //Verify
       assert(5 == x);
-
       assert(5 == obj.x);
 
       //Teardown
@@ -54,7 +53,6 @@ public:
 
       //Verify
       assert(5 == y);
-
       assert(5 == obj.y);
 
       //Teardown
@@ -74,7 +72,6 @@ public:
 
       //Verify
       assert(0 == dx);
-
       assert(0 == obj.dx);
 
       //Teardown
@@ -94,7 +91,6 @@ public:
 
       //Verify
       assert(0 == dy);
-
       assert(0 == obj.dy);
 
       //Teardown
