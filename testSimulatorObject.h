@@ -130,8 +130,8 @@ public:
       satellite.advance(earth);
 
       // Verify
-      assert(closeEnough(satellite.getX(), 446, 389.964, 0.001));
-      assert(closeEnough(satellite.getY(), -42, 160, 122.476, 0.001));
+      assert(closeEnough(satellite.getX(), 446389.964, 0.001));
+      assert(closeEnough(satellite.getY(), -42160122.476, 0.001));
       assert(closeEnough(satellite.getDx(), 3099.886, 0.001));
       assert(closeEnough(satellite.getDy(), 32.313, 0.001));
 
@@ -155,7 +155,25 @@ public:
    
    void test_getCollisionBody()
    {
+      // Setup
+      SimulatorObject satellite;
+      satellite.setX(0);
+      satellite.setY(42164000);
+      satellite.setDx(3100);
+      satellite.setDy(0);
+      satellite.radius = 5;
+
+      // Exercise
+      CollisionBody body = satellite.getCollisionBody();
+
+      // Verify
+      assert(0 == body.getX());
+      assert(42164000 == body.getY());
+      assert(3100 == body.getDx());
+      assert(0 == body.getDy());
+      assert(5 == body.getRadius());
       
+      // Teardown
    }
    
    void test_getRadius()
