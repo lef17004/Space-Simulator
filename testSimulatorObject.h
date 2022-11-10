@@ -35,6 +35,11 @@ public:
       test_setDx();
       test_getDy();
       test_setDy();
+      test_setRotation();
+      test_getRotation();
+      test_isAlive();
+      test_setAlive();
+      test_getHeight();
       
    }
    
@@ -105,7 +110,9 @@ public:
    
    void test_getX()
    {
+     
       
+     
    }
    
    void test_setX()
@@ -153,7 +160,27 @@ public:
       
    }
    
-   void test_location()
+   void test_getRotation()
+   {
+      
+   }
+   
+   void test_setRotation()
+   {
+      
+   }
+   
+   void test_isAlive()
+   {
+      
+   }
+   
+   void test_setAlive()
+   {
+      
+   }
+   
+   void test_getHeight()
    {
       
    }
