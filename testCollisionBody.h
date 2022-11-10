@@ -6,6 +6,10 @@ class TestCollisionBody
 public:
    void run()
    {
+      test_getX();
+      test_getY();
+      test_getDx();
+      test_getDy();
       test_SameSizeNoVolocityNoCollision();
       test_SameSizeNoVolocityCollision();
       test_DifferentSizeNoVolocityNoCollision();
@@ -16,6 +20,86 @@ public:
       test_BothMoving();
    }
    
+   void test_getX()
+   {
+      //Setup
+      CollisionBody obj;
+      obj.x = 5;
+      obj.y = 5;
+      obj.dx = 0;
+      obj.dy = 0;
+
+      //Exercise
+      double x = obj.getX();
+
+      //Verify
+      assert(5 == x);
+
+      assert(5 == obj.x);
+
+      //Teardown
+   }
+
+   void test_getY()
+   {
+      //Setup
+      CollisionBody obj;
+      obj.x = 5;
+      obj.y = 5;
+      obj.dx = 0;
+      obj.dy = 0;
+
+      //Exercise
+      double y = obj.getY();
+
+      //Verify
+      assert(5 == y);
+
+      assert(5 == obj.y);
+
+      //Teardown
+   }
+
+   void test_getDx()
+   {
+      //Setup
+      CollisionBody obj;
+      obj.x = 5;
+      obj.y = 5;
+      obj.dx = 0;
+      obj.dy = 0;
+
+      //Exercise
+      double dx = obj.getDx();
+
+      //Verify
+      assert(0 == dx);
+
+      assert(0 == obj.dx);
+
+      //Teardown
+   }
+
+   void test_getDy()
+   {
+      //Setup
+      CollisionBody obj;
+      obj.x = 5;
+      obj.y = 5;
+      obj.dx = 0;
+      obj.dy = 0;
+
+      //Exercise
+      double dy = obj.getDy();
+
+      //Verify
+      assert(0 == dy);
+
+      assert(0 == obj.dy);
+
+      //Teardown
+   }
+
    void test_SameSizeNoVolocityNoCollision()
    {
       // Setup
