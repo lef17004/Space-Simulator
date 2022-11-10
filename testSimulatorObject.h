@@ -7,6 +7,8 @@
 
 #pragma once
 
+#include "simulatorObject.h"
+
 class TestSimulatorObject
 {
 public:
@@ -55,7 +57,16 @@ public:
    
    void test_advanceFrameOne()
    {
+      // Setup
       
+
+      // Exercise
+
+
+      // Verify
+
+
+      // Teardown
    }
    
    void test_advanceFrameTwo()
