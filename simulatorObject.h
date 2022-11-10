@@ -22,6 +22,7 @@ private:
    
 public:
    SimulatorObject() {}
+   SimulatorObject(Position position, Velocity velocity, int radius) {}
    virtual void advance(SimulatorObject earth);
    virtual void draw();
    virtual SimulatorObject hit();
