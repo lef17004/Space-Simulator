@@ -18,6 +18,7 @@
 #include "velocity.h"
 #include "acceleration.h"
 #include "constants.h"
+#include "test.h"
 using namespace std;
 
 
@@ -128,9 +129,10 @@ int main(int argc, char** argv)
       "Demo",   /* name on the window */
       ptUpperRight);
 
+   testRunner();
    // Initialize the demo
    Demo demo(ptUpperRight);
-
+   
    // set everything into action
    ui.run(callBack, &demo);
 
