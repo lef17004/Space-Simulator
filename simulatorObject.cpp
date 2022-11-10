@@ -6,3 +6,26 @@
 //
 
 #include "simulatorObject.h"
+void SimulatorObject::advance(SimulatorObject earth)
+{
+   
+}
+void SimulatorObject::draw()
+{
+   
+}
+
+SimulatorObject SimulatorObject::hit()
+{
+   return SimulatorObject();
+}
+
+void SimulatorObject::rotate()
+{
+   
+}
+
+CollisionBody SimulatorObject::getCollisionBody()
+{
+   return CollisionBody();
+}

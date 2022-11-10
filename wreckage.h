@@ -6,3 +6,11 @@
 //
 
 #pragma once
+#include "simulatorObject.h"
+
+
+
+class Wreckage: public SimulatorObject
+{
+   
+};
