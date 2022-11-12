@@ -6,6 +6,8 @@
 //
 
 #include "simulatorObject.h"
+#include <vector>
+
 void SimulatorObject::advance(SimulatorObject earth)
 {
    
@@ -15,9 +17,9 @@ void SimulatorObject::draw()
    
 }
 
-SimulatorObject SimulatorObject::hit()
+std::vector<SimulatorObject> SimulatorObject::hit()
 {
-   return SimulatorObject();
+   return std::vector<SimulatorObject>();
 }
 
 void SimulatorObject::rotate()

@@ -6,3 +6,10 @@
 //
 
 #pragma once
+
+#include "satellite.h"
+
+class Fragment: public Satellite
+{
+   friend class TestSatellite;
+};

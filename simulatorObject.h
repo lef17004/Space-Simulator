@@ -9,12 +9,12 @@
 #include "position.h"
 #include "velocity.h"
 #include "collisionBody.h"
-
+#include <vector>
 
 
 class SimulatorObject
 {
-private:
+protected:
    Position position;
    Velocity velocity;
    int radius;
@@ -25,7 +25,7 @@ public:
    SimulatorObject(Position position, Velocity velocity, int radius) {}
    virtual void advance(SimulatorObject earth);
    virtual void draw();
-   virtual SimulatorObject hit();
+   virtual std::vector<SimulatorObject> hit();
    virtual void rotate();
    virtual CollisionBody getCollisionBody();
    
@@ -54,4 +54,5 @@ public:
    void kill() {}
 
    friend class TestSimulatorObject;
+   friend class TestSatellite;
 };

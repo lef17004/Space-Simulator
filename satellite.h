@@ -6,3 +6,9 @@
 //
 
 #pragma once
+#include "simulatorObject.h"
+
+class Satellite: public SimulatorObject
+{
+   
+};
