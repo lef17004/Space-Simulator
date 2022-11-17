@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="acceleration.cpp" />
+    <ClCompile Include="angle.cpp" />
     <ClCompile Include="collisionBody.cpp" />
     <ClCompile Include="earth.cpp" />
     <ClCompile Include="Lab07.cpp" />
@@ -159,6 +160,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="acceleration.h" />
+    <ClInclude Include="angle.h" />
     <ClInclude Include="collisionBody.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="earth.h" />
