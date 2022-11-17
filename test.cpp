@@ -21,6 +21,6 @@ void testRunner()
 {
 //   TestPosition().run();
    TestSimulatorObject().run();
-//   TestCollisionBody().run();
+   TestCollisionBody().run();
 //   TestSatellite().run();
 }

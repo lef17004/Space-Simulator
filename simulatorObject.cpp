@@ -9,6 +9,9 @@
 #include <vector>
 #include "uiDraw.h"
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 void SimulatorObject::advance(SimulatorObject earth)
 {
    double angle = atan2(0 - position.getMetersX(), 0 - position.getMetersY());
@@ -21,22 +24,35 @@ void SimulatorObject::advance(SimulatorObject earth)
    position.add(velocity, accel);
    rotate();
 }
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 void SimulatorObject::draw()
 {
    drawGPS(getPosition(), rotationAngle.getRadians());
 }
 
+/******************************************************************************
+  *
+  ******************************************************************************/
 std::vector<SimulatorObject> SimulatorObject::hit()
 {
    kill();
    return std::vector<SimulatorObject>();
 }
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 void SimulatorObject::rotate()
 {
    this->rotationAngle.add(-0.0040);
 }
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 CollisionBody SimulatorObject::getCollisionBody()
 {
    return CollisionBody(position, velocity, radius);

@@ -10,6 +10,9 @@
 #include <algorithm>
 using namespace std;
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
   
    using std::abs;
@@ -17,6 +20,7 @@ bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
    double dMax = max(abs(box1.getDx()), abs(box1.getDy()));
    dMax = max(dMax, abs(box2.getDx()));
    dMax = max(dMax, abs(box2.getDy()));
+   dMax = max(dMax, 0.1);
 
    float  distMin = std::numeric_limits<double>::max();
 
@@ -30,10 +34,10 @@ bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
       
       float distSquared = ((x1 - x2) * (x1 - x2)) + ((y1 - y2) * (y1 - y2));
 
-      float distMin = min(distMin, distSquared);
+      distMin = min(distMin, distSquared);
    }
 
-   if (distMin < box1.getRadius() + box2.getRadius())
+   if (sqrt(distMin) < box1.getRadius() + box2.getRadius())
       return true;
    return false;
 }
