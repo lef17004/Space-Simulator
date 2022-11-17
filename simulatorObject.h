@@ -4,7 +4,7 @@
 //
 //  Created by Michael LeFevre on 11/8/22.
 //
-
+#define _USE_MATH_DEFINES
 #pragma once
 #include "position.h"
 #include "velocity.h"
