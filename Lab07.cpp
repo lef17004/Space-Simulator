@@ -11,6 +11,9 @@
  *      ??
  *****************************************************************/
 
+#define _USE_MATH_DEFINES
+
+#include <math.h>
 #include <cassert>      // for ASSERT
 #include "uiInteract.h" // for INTERFACE
 #include "uiDraw.h"     // for RANDOM and DRAW*
