@@ -17,6 +17,7 @@
 		3333290E291B1AE5006814A9 /* satellites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3333290C291B1AE5006814A9 /* satellites.cpp */; };
 		33332911291B1B11006814A9 /* lifespan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3333290F291B1B11006814A9 /* lifespan.cpp */; };
 		33332914291B1B5C006814A9 /* parts.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33332912291B1B5C006814A9 /* parts.cpp */; };
+		3378392E2925AE5E000BCB9F /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3378392D2925AE5E000BCB9F /* angle.cpp */; };
 		33AD94E2291D99E600147D70 /* velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33AD94E1291D99E600147D70 /* velocity.cpp */; };
 		33DCC6DA29088076000D6FD5 /* acceleration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33DCC6D729087EFB000D6FD5 /* acceleration.cpp */; };
 		C11C7EA425780B2100EA4B2E /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C11C7EA225780B2100EA4B2E /* GLUT.framework */; };
@@ -62,6 +63,8 @@
 		33332912291B1B5C006814A9 /* parts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parts.cpp; sourceTree = "<group>"; };
 		33332913291B1B5C006814A9 /* parts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parts.h; sourceTree = "<group>"; };
 		33332915291C900A006814A9 /* testSimulatorObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSimulatorObject.h; sourceTree = "<group>"; };
+		3378392C2925AE42000BCB9F /* angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = angle.h; sourceTree = "<group>"; };
+		3378392D2925AE5E000BCB9F /* angle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = angle.cpp; sourceTree = "<group>"; };
 		33AAA2A6291DF94500CEAFF5 /* testSatellite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSatellite.h; sourceTree = "<group>"; };
 		33AD94E0291D99E600147D70 /* testCollisionBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testCollisionBody.h; sourceTree = "<group>"; };
 		33AD94E1291D99E600147D70 /* velocity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = velocity.cpp; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				33DCC6D629087EFB000D6FD5 /* acceleration.h */,
+				3378392C2925AE42000BCB9F /* angle.h */,
 				333328FE291B1994006814A9 /* collisionBody.h */,
 				33DCC6D929087EFB000D6FD5 /* constants.h */,
 				3333290A291B1AB9006814A9 /* earth.h */,
@@ -122,8 +126,8 @@
 			isa = PBXGroup;
 			children = (
 				C11C7EA625780B5C00EA4B2E /* Lab07.cpp */,
-				33AD94E1291D99E600147D70 /* velocity.cpp */,
 				33DCC6D729087EFB000D6FD5 /* acceleration.cpp */,
+				3378392D2925AE5E000BCB9F /* angle.cpp */,
 				333328FD291B1994006814A9 /* collisionBody.cpp */,
 				33332909291B1AB9006814A9 /* earth.cpp */,
 				3333290F291B1B11006814A9 /* lifespan.cpp */,
@@ -134,6 +138,7 @@
 				3333290C291B1AE5006814A9 /* satellites.cpp */,
 				333328F5291B17F1006814A9 /* simulator.cpp */,
 				333328FA291B1922006814A9 /* simulatorObject.cpp */,
+				33AD94E1291D99E600147D70 /* velocity.cpp */,
 				33332903291B1A2C006814A9 /* wreckage.cpp */,
 			);
 			name = CPP;
@@ -259,6 +264,7 @@
 				333328FC291B1922006814A9 /* simulatorObject.cpp in Sources */,
 				33332911291B1B11006814A9 /* lifespan.cpp in Sources */,
 				C11C7EB125780B6500EA4B2E /* Lab07.cpp in Sources */,
+				3378392E2925AE5E000BCB9F /* angle.cpp in Sources */,
 				C11C7EB225780B6500EA4B2E /* test.cpp in Sources */,
 				333328FF291B1994006814A9 /* collisionBody.cpp in Sources */,
 				C11C7EB325780B6500EA4B2E /* uiInteract.cpp in Sources */,

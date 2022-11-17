@@ -103,10 +103,10 @@ public:
       satellite.advance(earth);
 
       // Verify
-      assert(148800 == satellite.getX());
+      assert(closeEnough(satellite.getX(), 148800.0, 0.001));
       assert(closeEnough(satellite.getY(), 42163224.504, 0.001));
       assert(3100 == satellite.getDx());
-      assert(closeEnough(satellite.getDy(), 10.771, 0.001));
+      assert(closeEnough(satellite.getDy(), -10.771, 0.001));
       assert(10 == satellite.radius);
       assert(true == satellite.isAlive());
 
@@ -138,7 +138,7 @@ public:
       assert(closeEnough(satellite.getX(), 297597.263, 0.001));
       assert(closeEnough(satellite.getY(), 42161931.9953, 0.001));
       assert(closeEnough(satellite.getDx(), 3099.962, 0.001));
-      assert(closeEnough(satellite.getDy(), 21.542, 0.001));
+      assert(closeEnough(satellite.getDy(), -21.542, 0.001));
       assert(10 == satellite.radius);
       assert(true == satellite.isAlive());
       
@@ -170,10 +170,10 @@ public:
 
       // Verify
       assert(closeEnough(satellite.getX(), 446389.964, 0.001));
-      assert(closeEnough(satellite.getY(), -42160122.476, 0.001));
+      assert(closeEnough(satellite.getY(), 42160122.476, 0.001));
       assert(closeEnough(satellite.getDx(), 3099.886, 0.001));
-      assert(closeEnough(satellite.getDy(), 32.313, 0.001));
-      assert(100 == satellite.radius);
+      assert(closeEnough(satellite.getDy(), -32.313, 0.001));
+      assert(10 == satellite.radius);
       assert(true == satellite.isAlive());
       // Teardown
    }
@@ -183,8 +183,8 @@ public:
    {
       // Setup
       Position pos;
-      pos.setMetersX(3);
-      pos.setMetersY(4);
+      pos.setMetersX(4);
+      pos.setMetersY(3);
       
       Velocity vel;
       vel.setX(5);
@@ -240,8 +240,8 @@ public:
    {
       // Setup
       Position pos;
-      pos.setMetersX(3);
-      pos.setMetersY(4);
+      pos.setMetersX(4);
+      pos.setMetersY(3);
       
       Velocity vel;
       vel.setX(5);
@@ -273,8 +273,8 @@ public:
    {
       // Setup
       Position pos;
-      pos.setMetersX(3);
-      pos.setMetersY(4);
+      pos.setMetersX(4);
+      pos.setMetersY(3);
       
       Velocity vel;
       vel.setX(5);
@@ -304,8 +304,8 @@ public:
    {
       // Setup
       Position pos;
-      pos.setMetersX(3);
-      pos.setMetersY(4);
+      pos.setMetersX(4);
+      pos.setMetersY(3);
       
       Velocity vel;
       vel.setX(5);
@@ -321,8 +321,8 @@ public:
       Position posReturned = obj.getPosition();
       
       // Verify
-      assert(3 == posReturned.getMetersX());
-      assert(4 == posReturned.getMetersY());
+      assert(4 == posReturned.getMetersX());
+      assert(3 == posReturned.getMetersY());
       
       assert(4 == obj.position.getMetersX());
       assert(3 == obj.position.getMetersY());
@@ -352,9 +352,8 @@ public:
       obj.alive = true;
       
       Position pos2;
-      pos.setMetersX(100);
-      pos.setMetersX(200);
-      obj.position = pos2;
+      pos2.setMetersX(100);
+      pos2.setMetersY(200);
       
       // Exercise
       obj.setPosition(pos2);
@@ -398,9 +397,9 @@ public:
       assert(3 == x);
       
       assert(3 == obj.position.getMetersX());
-      assert(22 == obj.position.getMetersY());
-      assert(55 == obj.velocity.getX());
-      assert(100 == obj.velocity.getY());
+      assert(4 == obj.position.getMetersY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -431,8 +430,8 @@ public:
       // Verify
       assert(22 == obj.position.getMetersX());
       assert(4 == obj.position.getMetersY());
-      assert(55 == obj.velocity.getX());
-      assert(100 == obj.velocity.getY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -465,8 +464,8 @@ public:
       
       assert(3 == obj.position.getMetersX());
       assert(4 == obj.position.getMetersY());
-      assert(55 == obj.velocity.getX());
-      assert(100 == obj.velocity.getY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -497,8 +496,8 @@ public:
       // Verify
       assert(3 == obj.position.getMetersX());
       assert(22 == obj.position.getMetersY());
-      assert(55 == obj.velocity.getX());
-      assert(100 == obj.velocity.getY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -532,8 +531,8 @@ public:
       
       assert(3 == obj.position.getMetersX());
       assert(4 == obj.position.getMetersY());
-      assert(55 == obj.velocity.getX());
-      assert(100 == obj.velocity.getY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -603,7 +602,7 @@ public:
       assert(3 == obj.position.getMetersX());
       assert(4 == obj.position.getMetersY());
       assert(5 == obj.velocity.getX());
-      assert(10 == obj.velocity.getY());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown
@@ -669,7 +668,7 @@ public:
       assert(3 == obj.position.getMetersX());
       assert(4 == obj.position.getMetersY());
       assert(5 == obj.velocity.getX());
-      assert(10 == obj.velocity.getY());
+      assert(5 == obj.velocity.getY());
       assert(5 == obj.radius);
       assert(true == obj.isAlive());
       // Teardown

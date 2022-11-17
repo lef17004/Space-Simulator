@@ -20,6 +20,7 @@ public:
       test_BothMoving();
    }
    
+   // Test x getter
    void test_getX()
    {
       //Setup
@@ -39,6 +40,7 @@ public:
       //Teardown
    }
 
+   // Test y getter
    void test_getY()
    {
       //Setup
@@ -58,6 +60,7 @@ public:
       //Teardown
    }
 
+   // Test dx getter
    void test_getDx()
    {
       //Setup
@@ -77,6 +80,7 @@ public:
       //Teardown
    }
 
+   // Test dy getter
    void test_getDy()
    {
       //Setup
@@ -96,6 +100,7 @@ public:
       //Teardown
    }
 
+   // Test Collision between objects of the same size with no velocity
    void test_SameSizeNoVolocityNoCollision()
    {
       // Setup
@@ -134,6 +139,7 @@ public:
       // Teardown
    }
 
+   // Test Collision between objects of the same size with no velocity
    void test_SameSizeNoVolocityCollision()
    {
       // Setup
@@ -172,6 +178,7 @@ public:
       // Teardown
    }
 
+   // Test collision of different sized objects
    void test_DifferentSizeNoVolocityNoCollision()
    {
       // Setup
@@ -210,6 +217,7 @@ public:
       // Teardown
    }
 
+   // Test collision of different size objects
    void test_DifferentSizeNoVolocityCollision()
    {
       // Setup
@@ -286,6 +294,7 @@ public:
       // Teardown
    }
 
+   // Test collision of objects moving in the y direction
    void test_CollisionWithDy()
    {
       // Setup
@@ -324,6 +333,7 @@ public:
       // Teardown
    }
 
+   // Test collisions moving in the dx direction
    void test_CollisionWithDyDx()
    {
       // Setup
@@ -362,6 +372,7 @@ public:
       // Teardown
    }
 
+   // Test both objects moving 
    void test_BothMoving()
    {
       // Setup

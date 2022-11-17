@@ -16,6 +16,7 @@ public:
       test_wreckageCount();
    }
    
+   // Test that the right number of wreckage is returned. 
    void test_wreckageCount()
    {
       // Setup

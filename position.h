@@ -72,6 +72,8 @@ public:
    void add(Velocity velocity);
    void add(Velocity velocity, Acceleration acceletation);
    
+   
+   
 private:
    double x;                 // horizontal position
    double y;                 // vertical position
