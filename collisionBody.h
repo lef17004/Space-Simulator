@@ -31,7 +31,7 @@ public:
    double getDx() { return 0; }
    double getDy() { return 0; }
    
-   static bool isCollision(CollisionBody box1, CollisionBody box2) { return true; }
+   static bool isCollision(CollisionBody box1, CollisionBody box2);
    
    friend class TestCollisionBody;
 };
