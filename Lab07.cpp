@@ -103,18 +103,18 @@ void callBack(const Interface* pUI, void* p)
    Demo* pDemo = (Demo*)p;
 
    
-   pDemo->earth.advance(SimulatorObject());
+   pDemo->earth.advance(pDemo->earth);
    pDemo->earth.draw();
    
    // rotate the earth
    double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
    pDemo->angleEarth += rotationSpeed;
-   pDemo->spud.advance(SimulatorObject());
-   pDemo->sat.advance();
-   drawGPS       (pDemo->sat.getPosition(),        pDemo->angleEarth + M_PI - 0.9);
+   pDemo->spud.advance(pDemo->earth);
+   //pDemo->sat.advance();
+   //drawGPS       (pDemo->sat.getPosition(),        pDemo->angleEarth + M_PI - 0.9);
    //drawEarth(Position(0, 0), pDemo->angleEarth);
    
-   pDemo->sim.advance(SimulatorObject());
+   pDemo->sim.advance(pDemo->earth);
    pDemo->sim.draw();
    pDemo->spud.draw();
    

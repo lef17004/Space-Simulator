@@ -10,7 +10,8 @@
 #include "uiDraw.h"
 
 /******************************************************************************
- *
+ * Advance
+ * Moves the object forward by 1 frame.
  ******************************************************************************/
 void SimulatorObject::advance(const SimulatorObject & earth)
 {
@@ -27,7 +28,8 @@ void SimulatorObject::advance(const SimulatorObject & earth)
 }
 
 /******************************************************************************
- *
+ * Draw
+ * Draws the satellite on the screen. Uses GPS Satellite to test.
  ******************************************************************************/
 void SimulatorObject::draw()
 {
@@ -35,7 +37,8 @@ void SimulatorObject::draw()
 }
 
 /******************************************************************************
-  *
+  * Hit
+ * Handles hit logic. Kills the satellite and returns wreckage.
   ******************************************************************************/
 std::vector<SimulatorObject> SimulatorObject::hit()
 {
@@ -44,7 +47,8 @@ std::vector<SimulatorObject> SimulatorObject::hit()
 }
 
 /******************************************************************************
- *
+ *Rotate
+ *Rotates the object by the set amount.
  ******************************************************************************/
 void SimulatorObject::rotate()
 {
@@ -52,7 +56,8 @@ void SimulatorObject::rotate()
 }
 
 /******************************************************************************
- *
+ * Get Collision Body
+ * Returns the collision body of a satellite. 
  ******************************************************************************/
 CollisionBody SimulatorObject::getCollisionBody()
 {
