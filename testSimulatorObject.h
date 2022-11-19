@@ -10,6 +10,7 @@
 #include "simulatorObject.h"
 #include "position.h"
 #include "velocity.h"
+#include "earth.h"
 
 class TestSimulatorObject
 {
@@ -95,7 +96,7 @@ public:
       satellite.radius = 10;
       satellite.alive = true;
 
-      SimulatorObject earth;
+      Earth earth;
       earth.setX(0);
       earth.setY(0);
 
@@ -125,7 +126,7 @@ public:
       satellite.radius = 10;
       satellite.alive = true;
 
-      SimulatorObject earth;
+      Earth earth;
       earth.setX(0);
       earth.setY(0);
       
@@ -158,7 +159,7 @@ public:
       satellite.radius = 10;
       satellite.alive = true;
 
-      SimulatorObject earth;
+      Earth earth;
       earth.setX(0);
       earth.setY(0);
 

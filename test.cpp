@@ -11,7 +11,8 @@
 #include "testPosition.h"
 #include "testSimulatorObject.h"
 #include "testCollisionBody.h"
-#include "testSatellite.h"
+#include <iostream>
+using namespace std;
 
 /*****************************************************************
  * TEST RUNNER
@@ -19,8 +20,8 @@
  ****************************************************************/
 void testRunner()
 {
-//   TestPosition().run();
+   TestPosition().run();
    TestSimulatorObject().run();
    TestCollisionBody().run();
-//   TestSatellite().run();
+   cout << "All Tests Pass!!!!!!!!!" << endl;
 }

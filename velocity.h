@@ -27,8 +27,8 @@ public:
       dy  = dy + acceleration.getY() * TIME;
    }
    
-   double getX() { return dx; }
-   double getY() { return dy; }
+   double getX() const { return dx; }
+   double getY() const { return dy; }
    void setX(double x) { dx = x; }
    void setY(double y) { dy = y; }
    

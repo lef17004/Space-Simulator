@@ -12,11 +12,12 @@
 /******************************************************************************
  *
  ******************************************************************************/
-void SimulatorObject::advance(SimulatorObject earth)
+void SimulatorObject::advance(const SimulatorObject & earth)
 {
-   double angle = atan2(0 - position.getMetersX(), 0 - position.getMetersY());
-   double heightAboveEarth = position.getTotalMeters() - EARTH_RADIUS;
-   double innerEquation = EARTH_RADIUS / (EARTH_RADIUS + heightAboveEarth);
+   // TODO: Make physics formula file 
+   double angle = atan2(earth.getX() - position.getMetersX(), earth.getY() - position.getMetersY());
+   double heightAboveEarth = position.getTotalMeters() - earth.getRadius();
+   double innerEquation = earth.getRadius() / (earth.getRadius() + heightAboveEarth);
    double gravity = GRAVITY_SEA_LEVEL * innerEquation * innerEquation;
    
    Acceleration accel(gravity, angle, position);

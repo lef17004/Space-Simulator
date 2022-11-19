@@ -24,6 +24,7 @@
 #include "test.h"
 #include "simulatorObject.h"
 #include "satellite.h"
+#include "earth.h"
 using namespace std;
 
 
@@ -83,7 +84,7 @@ public:
    //SimulatorObject sim(Position(), Velocity(), 5);
    SimulatorObject sim;
    Sputnik spud;
-   
+   Earth earth;
 
    double angleEarth;
 };
@@ -102,17 +103,21 @@ void callBack(const Interface* pUI, void* p)
    Demo* pDemo = (Demo*)p;
 
    
+   pDemo->earth.advance(SimulatorObject());
+   pDemo->earth.draw();
+   
    // rotate the earth
    double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
    pDemo->angleEarth += rotationSpeed;
    pDemo->spud.advance(SimulatorObject());
    pDemo->sat.advance();
    drawGPS       (pDemo->sat.getPosition(),        pDemo->angleEarth + M_PI - 0.9);
-   drawEarth(Position(0, 0), pDemo->angleEarth);
+   //drawEarth(Position(0, 0), pDemo->angleEarth);
    
    pDemo->sim.advance(SimulatorObject());
    pDemo->sim.draw();
    pDemo->spud.draw();
+   
 }
 
 double Position::metersFromPixels = 40.0;
