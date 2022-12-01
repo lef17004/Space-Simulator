@@ -31,6 +31,22 @@ public:
    }
 };
 
+class GPS : public Satellite
+{
+public:
+   GPS(Position givenPosition, Velocity givenVelocity)
+   {
+      position = givenPosition;
+      velocity = givenVelocity;
+      radius = 12;
+   }
+
+   virtual void draw()
+   {
+      drawGPS(position, rotationAngle.getRadians());
+   }
+};
+
 class DreamChaser: public Satellite
 {
 private:
