@@ -42,6 +42,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33132C7C2938259D009D7F2D /* star.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = star.h; sourceTree = "<group>"; };
+		33132C7D293825AC009D7F2D /* input.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = input.h; sourceTree = "<group>"; };
 		333328F5291B17F1006814A9 /* simulator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulator.cpp; sourceTree = "<group>"; };
 		333328F6291B17F1006814A9 /* simulator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = simulator.h; sourceTree = "<group>"; };
 		333328FA291B1922006814A9 /* simulatorObject.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = simulatorObject.cpp; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				33DCC6D629087EFB000D6FD5 /* acceleration.h */,
+				33132C7C2938259D009D7F2D /* star.h */,
 				3378392C2925AE42000BCB9F /* angle.h */,
 				333328FE291B1994006814A9 /* collisionBody.h */,
 				33DCC6D929087EFB000D6FD5 /* constants.h */,
@@ -118,6 +121,7 @@
 				333328FB291B1922006814A9 /* simulatorObject.h */,
 				33DCC6D829087EFB000D6FD5 /* velocity.h */,
 				33332904291B1A2C006814A9 /* wreckage.h */,
+				33132C7D293825AC009D7F2D /* input.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

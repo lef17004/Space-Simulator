@@ -25,6 +25,8 @@
 #include "simulatorObject.h"
 #include "satellite.h"
 #include "earth.h"
+#include "simulator.h"
+#include "input.h"
 using namespace std;
 
 
@@ -84,9 +86,11 @@ public:
    //SimulatorObject sim(Position(), Velocity(), 5);
    SimulatorObject sim;
    Sputnik spud;
+   
    Earth earth;
-
    double angleEarth;
+   
+   Simulator simulator;
 };
 
 /*************************************
@@ -101,22 +105,28 @@ void callBack(const Interface* pUI, void* p)
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
    Demo* pDemo = (Demo*)p;
-
+   Input input;
+   input.setUpPressed(pUI->isUp());
+   input.setDownPressed(pUI->isDown());
+   input.setLeftPressed(pUI->isLeft());
+   input.setRightPressed(pUI->isRight());
+   input.setSpacePressed(pUI->isSpace());
    
-   pDemo->earth.advance(pDemo->earth);
-   pDemo->earth.draw();
+   pDemo->simulator.simulateFrame(input);
    
    // rotate the earth
-   double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
-   pDemo->angleEarth += rotationSpeed;
-   pDemo->spud.advance(pDemo->earth);
-   //pDemo->sat.advance();
-   //drawGPS       (pDemo->sat.getPosition(),        pDemo->angleEarth + M_PI - 0.9);
-   //drawEarth(Position(0, 0), pDemo->angleEarth);
-   
-   pDemo->sim.advance(pDemo->earth);
-   pDemo->sim.draw();
-   pDemo->spud.draw();
+//   double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
+//   pDemo->spud.advance(SimulatorObject());
+//   pDemo->sat.advance();
+//
+//   pDemo->sim.advance(pDemo->earth);
+//   pDemo->sim.draw();
+//   pDemo->spud.draw();
+//
+//
+// //
+//   pDemo->earth.advance(pDemo->earth);
+//   pDemo->earth.draw();
    
 }
 

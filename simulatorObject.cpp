@@ -10,15 +10,13 @@
 #include "uiDraw.h"
 
 /******************************************************************************
- * Advance
- * Moves the object forward by 1 frame.
+ *
  ******************************************************************************/
-void SimulatorObject::advance(const SimulatorObject & earth)
+void SimulatorObject::advance(const SimulatorObject & gravitySource)
 {
-   // TODO: Make physics formula file 
-   double angle = atan2(earth.getX() - position.getMetersX(), earth.getY() - position.getMetersY());
-   double heightAboveEarth = position.getTotalMeters() - earth.getRadius();
-   double innerEquation = earth.getRadius() / (earth.getRadius() + heightAboveEarth);
+   double angle = atan2(gravitySource.getX() - position.getMetersX(), gravitySource.getY() - position.getMetersY());
+   double heightAboveEarth = position.getTotalMeters() - gravitySource.getRadius();
+   double innerEquation = gravitySource.getRadius() / (gravitySource.getRadius() + heightAboveEarth);
    double gravity = GRAVITY_SEA_LEVEL * innerEquation * innerEquation;
    
    Acceleration accel(gravity, angle, position);
@@ -28,8 +26,7 @@ void SimulatorObject::advance(const SimulatorObject & earth)
 }
 
 /******************************************************************************
- * Draw
- * Draws the satellite on the screen. Uses GPS Satellite to test.
+ *
  ******************************************************************************/
 void SimulatorObject::draw()
 {
@@ -37,18 +34,16 @@ void SimulatorObject::draw()
 }
 
 /******************************************************************************
-  * Hit
- * Handles hit logic. Kills the satellite and returns wreckage.
+  *
   ******************************************************************************/
-std::vector<SimulatorObject> SimulatorObject::hit()
+void SimulatorObject::hit(list<SimulatorObject> & simulatorCollection)
 {
    kill();
-   return std::vector<SimulatorObject>();
+  
 }
 
 /******************************************************************************
- *Rotate
- *Rotates the object by the set amount.
+ *
  ******************************************************************************/
 void SimulatorObject::rotate()
 {
@@ -56,8 +51,7 @@ void SimulatorObject::rotate()
 }
 
 /******************************************************************************
- * Get Collision Body
- * Returns the collision body of a satellite. 
+ *
  ******************************************************************************/
 CollisionBody SimulatorObject::getCollisionBody()
 {

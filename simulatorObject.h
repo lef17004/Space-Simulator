@@ -10,6 +10,7 @@
 #include "velocity.h"
 #include "collisionBody.h"
 #include <vector>
+#include <list>
 #include "simulatorObject.h"
 #include "angle.h"
 #include "math.h"
@@ -28,13 +29,11 @@ public:
    SimulatorObject(): position(Position()),
                       velocity(Velocity()),
                       radius(0),
-   alive(true),
-   rotationAngle(Angle(0))
-   {}
+   alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
    SimulatorObject(Position position, Velocity velocity, int radius):
                       position(position),
                       velocity(velocity),
-   radius(radius), alive(true), rotationAngle(Angle(0)) {rotationAngle.setRadians(M_PI - 0.9);}
+   radius(radius), alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
    
    SimulatorObject(const SimulatorObject & rhs)
    {
@@ -54,23 +53,23 @@ public:
    }
    //Velocity & operator = (Velocity & rhs)
    
-   virtual void advance(const SimulatorObject & earth);
+   virtual void advance(const SimulatorObject & gravitySource);
    virtual void draw();
-   virtual std::vector<SimulatorObject> hit();
+   virtual void hit(std::list<SimulatorObject> & simulatorCollection);
    virtual void rotate();
    virtual CollisionBody getCollisionBody();
    
    int getRadius() const { return radius; }
    void setRadius(int radius) { this->radius = radius; }
    
-   Position getPosition() const { return position; }
+   Position getPosition() { return position; }
    void setPosition(Position position) { this->position = position; }
    
    double getX() const { return position.getMetersX(); }
    void setX(double x) { position.setMetersX(x); }
    double getY() const {return position.getMetersY(); }
    void setY(double y) { position.setMetersY(y); }
-   Velocity getVelocity() { return velocity; }
+   Velocity getVelocity() const { return velocity; }
    void setVelocity(const Velocity & velocity) { this->velocity = velocity; }
    double getDx() const { return velocity.getX(); }
    void setDx(double dx) { velocity.setX(dx); }
@@ -78,7 +77,7 @@ public:
    void setDy(double dy) { velocity.setY(dy); }
    Angle getRotation() const { return rotationAngle; }
    void setRotation(const Angle & rotation) { this->rotationAngle = rotation; }
-   bool isAlive() { return alive; }
+   bool isAlive() const { return alive; }
    void setAlive(bool isAlive) { alive = isAlive; }
    double getHeight() const { return sqrt((getX() * getX()) + (getY() * getY())); }
    
