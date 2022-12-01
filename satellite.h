@@ -63,6 +63,8 @@ public:
    {
       drawStarlink(position, rotationAngle.getRadians());
    }
+   
+   
 };
 
 class Dragon: public Satellite
@@ -99,9 +101,9 @@ public:
    void applyInput(const Input & input)
    {
       if (input.isLeftPressed())
-         rotationAngle.add(0.1);
-      if (input.isRightPressed())
          rotationAngle.add(-0.1);
+      if (input.isRightPressed())
+         rotationAngle.add(0.1);
       applyThrust = input.isDownPressed();
       
    }
@@ -126,8 +128,8 @@ public:
       
    }
    
-   Projectile & shoot()
+   Projectile * shoot()
    {
-      return *new Projectile();
+      return new Projectile(position, velocity, rotationAngle);
    }
 };

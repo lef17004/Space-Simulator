@@ -9,6 +9,7 @@
 #include "acceleration.h"
 #include "constants.h"
 #include "position.h"
+#include <iostream>
 
 class Velocity
 {
@@ -31,6 +32,14 @@ public:
    {
       dx = dx + acceleration.getX() * time;
       dy = dy + acceleration.getY() * time;
+   }
+   
+   void add(double total, Angle angle)
+   {
+      
+      std::cout << angle.getRadians() << std::endl;
+      dx += total * sin(angle.getRadians());
+      dy += total * cos(angle.getRadians());
    }
    
    double getX() const { return dx; }

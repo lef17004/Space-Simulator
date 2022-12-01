@@ -48,11 +48,35 @@ private:
    void handleInput(const Input & input)
    {
       ship.applyInput(input);
+      if (input.isSpacePressed())
+      {
+         simulatorObjects.push_back(ship.shoot());
+      }
    }
    
    void handleCollisions()
    {
       
+      for (auto it = simulatorObjects.begin(); it != simulatorObjects.end(); it++)
+      {
+         auto it2 = it;
+         for (it2++; it2 != simulatorObjects.end(); it2++)
+         {
+            if (CollisionBody::isCollision2((*it)->getCollisionBody2(), (*it2)->getCollisionBody2()))
+            {
+               (*it)->hit(simulatorObjects);
+               (*it2)->hit(simulatorObjects);
+            }
+         }
+      }
+      
+      for (auto it = simulatorObjects.rbegin(); it != simulatorObjects.rend(); it++)
+      {
+         if (!(*it)->isAlive())
+         {
+            simulatorObjects.remove(*it);
+         }
+      }
    }
    
 public:

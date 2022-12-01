@@ -31,8 +31,8 @@ public:
    void setRadians(double radians) { angleRadians = normalize(radians); }
    
    // Getters
-   float getDegrees() { return convertToDegrees(getRadians()); }
-   float getRadians() { return angleRadians; }
+   float getDegrees() const { return convertToDegrees(getRadians()); }
+   float getRadians() const { return angleRadians; }
    
    void add(double amount);
    
@@ -41,8 +41,8 @@ private:
    double angleRadians;
    
    // Conversions
-   double convertToDegrees(double radians) { return (180.0 * radians) / PI; }
-   double convertToRadians(double degrees) { return (degrees * 2.0 * PI) / 360.0; }
+   double convertToDegrees(double radians) const { return (180.0 * radians) / PI; }
+   double convertToRadians(double degrees) const { return (degrees * 2.0 * PI) / 360.0; }
    
    // Wraps a value around the range [0, 2PI)
    double normalize(double value);

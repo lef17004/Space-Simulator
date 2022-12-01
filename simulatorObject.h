@@ -55,9 +55,10 @@ public:
    
    virtual void advance(const SimulatorObject & gravitySource);
    virtual void draw();
-   virtual void hit(std::list<SimulatorObject> & simulatorCollection);
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
    virtual void rotate();
    virtual CollisionBody getCollisionBody();
+   virtual CollisionBody getCollisionBody2();
    
    int getRadius() const { return radius; }
    void setRadius(int radius) { this->radius = radius; }

@@ -155,4 +155,4 @@ void drawStar(const Position& point, unsigned char phase);
 int    random(int    min, int    max);
 double random(double min, double max);
 
-
+Position rotate2(const Position& origin, double x, double y, double rotation);

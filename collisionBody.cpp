@@ -41,3 +41,18 @@ bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
       return true;
    return false;
 }
+
+bool CollisionBody::isCollision2(CollisionBody obj1, CollisionBody obj2)
+{
+//   const dx = circle1.x - circle2.x;
+//   const dy = circle1.y - circle2.y;
+//   const distance = Math.sqrt(dx * dx + dy * dy);
+//
+//   const colliding = distance < circle1.radius + circle2.radius;
+   double dx = obj1.getX() - obj2.getX();
+   double dy = obj1.getY() - obj2.getY();
+
+   double distance = sqrt(dx * dx + dy * dy);
+   return distance < obj1.getRadius() + obj2.getRadius();
+   return false;
+}

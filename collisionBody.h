@@ -10,7 +10,6 @@
 #include "position.h"
 #include "velocity.h"
 
-
 class CollisionBody
 {
 private:
@@ -33,6 +32,7 @@ public:
    double getDy() { return dy; }
    
    static bool isCollision(CollisionBody box1, CollisionBody box2);
+   static bool isCollision2(CollisionBody obj1, CollisionBody obj2);
    
    friend class TestCollisionBody;
 };

@@ -36,7 +36,7 @@ void SimulatorObject::draw()
 /******************************************************************************
   *
   ******************************************************************************/
-void SimulatorObject::hit(list<SimulatorObject> & simulatorCollection)
+void SimulatorObject::hit(list<SimulatorObject*> & simulatorCollection)
 {
    kill();
   
@@ -56,4 +56,9 @@ void SimulatorObject::rotate()
 CollisionBody SimulatorObject::getCollisionBody()
 {
    return CollisionBody(position, velocity, radius);
+}
+
+CollisionBody SimulatorObject::getCollisionBody2()
+{
+   return CollisionBody(position.getPixelsX(), position.getPixelsY(), velocity.getX(), velocity.getY(), radius);
 }

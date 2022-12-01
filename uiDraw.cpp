@@ -61,7 +61,7 @@ const int RGB_GREEN[] =      {   0, 150,   0 };
  *           rotation Rotation in degrees
  *    OUTPUT point    The new position
  *************************************************************************/
-Position rotate(const Position& origin, double x, double y, double rotation)
+Position rotate2(const Position& origin, double x, double y, double rotation)
 {
    // because sine and cosine are expensive, we want to call them only once
    double cosA = cos(rotation);
@@ -134,19 +134,19 @@ void glDrawRect(const Position & center, const Position & offset,
 {
    glBegin(GL_QUADS);
    glColor(rect.rgb);
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         rect.x0 + offset.getPixelsX(),
                         rect.y0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         rect.x1 + offset.getPixelsX(),
                         rect.y1 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         rect.x2 + offset.getPixelsX(),
                         rect.y2 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         rect.x3 + offset.getPixelsX(),
                         rect.y3 + offset.getPixelsY(),
                         rotation));
@@ -338,23 +338,23 @@ void drawSputnik(const Position& center, double rotation)
    glBegin(GL_TRIANGLE_FAN);
    glColor(RGB_GREY);
    for (int i = 0; i < sizeof(pointsSphere) / sizeof(PT); i++)
-      glVertexPoint(rotate(center, pointsSphere[i].x, pointsSphere[i].y, rotation));
+      glVertexPoint(rotate2(center, pointsSphere[i].x, pointsSphere[i].y, rotation));
    glEnd();
 
    // draw the antenna
    glBegin(GL_LINES);
    glColor(RGB_WHITE);
-   glVertexPoint(rotate(center,  -6.0,   2.0, rotation));
-   glVertexPoint(rotate(center, -10.0, -15.0, rotation));
+   glVertexPoint(rotate2(center,  -6.0,   2.0, rotation));
+   glVertexPoint(rotate2(center, -10.0, -15.0, rotation));
 
-   glVertexPoint(rotate(center,  0.0,   1.0, rotation));
-   glVertexPoint(rotate(center, -2.5, -15.0, rotation));
+   glVertexPoint(rotate2(center,  0.0,   1.0, rotation));
+   glVertexPoint(rotate2(center, -2.5, -15.0, rotation));
 
-   glVertexPoint(rotate(center,  2.0, -6.0, rotation));
-   glVertexPoint(rotate(center,  2.5, -15.0, rotation));
+   glVertexPoint(rotate2(center,  2.0, -6.0, rotation));
+   glVertexPoint(rotate2(center,  2.5, -15.0, rotation));
 
-   glVertexPoint(rotate(center,  6.0,  2.0, rotation));
-   glVertexPoint(rotate(center, 10.0, -15.0, rotation));
+   glVertexPoint(rotate2(center,  6.0,  2.0, rotation));
+   glVertexPoint(rotate2(center, 10.0, -15.0, rotation));
    glEnd();
 }
 
@@ -382,15 +382,15 @@ void drawGPSLeft(const Position& center, double rotation, const Position& offset
    // draw the line connecting the solar array to the rest of the ship
    glBegin(GL_LINE_STRIP);
    glColor(RGB_WHITE);
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         3.0 + offset.getPixelsX(),
                         4.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         8.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         -3.0 + offset.getPixelsX(),
                         4.0 + offset.getPixelsY(),
                         rotation));
@@ -421,15 +421,15 @@ void drawGPSRight(const Position& center, double rotation, const Position& offse
    // draw the line connecting the solar array to the rest of the ship
    glBegin(GL_LINE_STRIP);
    glColor(RGB_WHITE);
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         3.0 + offset.getPixelsX(),
                         -4.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         -8.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         -3.0 + offset.getPixelsX(),
                         -4.0 + offset.getPixelsY(),
                         rotation));
@@ -544,11 +544,11 @@ void drawHubbleLeft(const Position& center, double rotation, const Position& off
 
    glBegin(GL_LINE_STRIP);
    glColor(RGB_WHITE);
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         3.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         -5.0 + offset.getPixelsY(),
                         rotation));
@@ -579,11 +579,11 @@ void drawHubbleRight(const Position& center, double rotation, const Position& of
 
    glBegin(GL_LINE_STRIP);
    glColor(RGB_WHITE);
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         -3.0 + offset.getPixelsY(),
                         rotation));
-   glVertexPoint(rotate(center,
+   glVertexPoint(rotate2(center,
                         0.0 + offset.getPixelsX(),
                         5.0 + offset.getPixelsY(),
                         rotation));
@@ -701,7 +701,7 @@ void drawShip(const Position& center, double rotation, bool thrust)
    glBegin(GL_TRIANGLE_FAN);
    glColor(RGB_LIGHT_GREY);
    for (int i = 0; i < sizeof(pointsShipWhite) / sizeof(PT); i++)
-      glVertexPoint(rotate(center, pointsShipWhite[i].x, pointsShipWhite[i].y, rotation));
+      glVertexPoint(rotate2(center, pointsShipWhite[i].x, pointsShipWhite[i].y, rotation));
    glEnd();
 
    // draw the flame if necessary
@@ -709,12 +709,12 @@ void drawShip(const Position& center, double rotation, bool thrust)
    {
       glBegin(GL_TRIANGLES);
       glColor(RGB_RED);
-      glVertexPoint(rotate(center, -3.0, -9.0, rotation));
-      glVertexPoint(rotate(center, random(-5.0, 5.0), random(-25.0, -13.0), rotation));
-      glVertexPoint(rotate(center, 3.0, -9.0, rotation));
-      glVertexPoint(rotate(center, -3.0, -9.0, rotation));
-      glVertexPoint(rotate(center, random(-5.0, 5.0), random(-25.0, -13.0), rotation));
-      glVertexPoint(rotate(center, 3.0, -9.0, rotation));
+      glVertexPoint(rotate2(center, -3.0, -9.0, rotation));
+      glVertexPoint(rotate2(center, random(-5.0, 5.0), random(-25.0, -13.0), rotation));
+      glVertexPoint(rotate2(center, 3.0, -9.0, rotation));
+      glVertexPoint(rotate2(center, -3.0, -9.0, rotation));
+      glVertexPoint(rotate2(center, random(-5.0, 5.0), random(-25.0, -13.0), rotation));
+      glVertexPoint(rotate2(center, 3.0, -9.0, rotation));
       glResetColor();
       glEnd();
    }
@@ -731,7 +731,7 @@ void drawShip(const Position& center, double rotation, bool thrust)
    glColor(RGB_DEEP_BLUE);
    for (int iRectangle = 0; iRectangle < 4; iRectangle++)
       for (int iVertex = 0; iVertex < 4; iVertex++)
-      glVertexPoint(rotate(center, pointsShipBlack[iRectangle][iVertex].x, 
+      glVertexPoint(rotate2(center, pointsShipBlack[iRectangle][iVertex].x, 
                                    pointsShipBlack[iRectangle][iVertex].y, rotation));
    glResetColor();
    glEnd();
