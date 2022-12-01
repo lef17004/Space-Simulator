@@ -11,7 +11,7 @@
 #include "simulatorObject.h"
 #include <list>
 #include <array>
-#include "stars.h"
+#include "star.h"
 #include "input.h"
 
 class Simulator
@@ -59,6 +59,9 @@ public:
    Simulator()
    {
       simulatorObjects.push_back(new Sputnik());
+      simulatorObjects.push_back(new Hubble());
+      simulatorObjects.push_back(new StarLink());
+      simulatorObjects.push_back(new Dragon());
    }
    
    void simulateFrame(const Input & input)
