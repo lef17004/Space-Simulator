@@ -11,7 +11,7 @@
 #include "simulatorObject.h"
 #include <list>
 #include <array>
-#include "stars.h"
+#include "star.h"
 #include "input.h"
 
 class Simulator
@@ -59,6 +59,9 @@ public:
    Simulator()
    {
       simulatorObjects.push_back(new Sputnik());
+      simulatorObjects.push_back(new Hubble());
+      simulatorObjects.push_back(new StarLink());
+      simulatorObjects.push_back(new Dragon());
       simulatorObjects.push_back(new GPS(Position(0.0,           26560000.0),  Velocity(-3880.0,      0.0)));
       simulatorObjects.push_back(new GPS(Position(23001634.72,   13280000.0),  Velocity(-1940.0,  3360.18)));
       simulatorObjects.push_back(new GPS(Position(23001634.72,  -13280000.0),  Velocity(1940.0,   3360.18)));
