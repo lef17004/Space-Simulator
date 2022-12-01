@@ -9,6 +9,7 @@
 #include "simulatorObject.h"
 #include "uiDraw.h"
 #include "input.h"
+#include "projectile.h"
 
 class Satellite: public SimulatorObject
 {
@@ -47,6 +48,39 @@ public:
    }
 };
 
+
+class StarLink: public Satellite
+{
+public:
+   StarLink()
+   {
+      position = Position(0.0, -13020000.0);
+      velocity = Velocity(5800.0, 0.0);
+      radius = 6;
+   }
+   
+   virtual void draw()
+   {
+      drawStarlink(position, rotationAngle.getRadians());
+   }
+};
+
+class Dragon: public Satellite
+{
+public:
+   Dragon()
+   {
+      position = Position(0.0, 8000000.0);
+      velocity = Velocity(-7900.0 , 0.0);
+      radius = 7;
+   }
+   
+   virtual void draw()
+   {
+      drawCrewDragon(position, rotationAngle.getRadians());
+   }
+};
+
 class DreamChaser: public Satellite
 {
 private:
@@ -76,8 +110,8 @@ public:
    {
       if (applyThrust)
       {
-         double angle = atan2(gravitySource.getX() - position.getMetersX(), gravitySource.getY() - position.getMetersY());
-         //Acceleration thrust(30.0, 
+         Acceleration thrust(30.0, rotationAngle);
+         velocity.add(thrust, 5);
       }
       SimulatorObject::advance(gravitySource);
    }
@@ -90,5 +124,10 @@ public:
    void rotate()
    {
       
+   }
+   
+   Projectile & shoot()
+   {
+      return *new Projectile();
    }
 };

@@ -7,6 +7,7 @@
 
 #pragma once
 #include "position.h"
+#include "angle.h"
 class Position;
 
 class Acceleration
@@ -18,7 +19,9 @@ private:
 public:
    Acceleration(): ddx(0), ddy(0) {}
    Acceleration(double ddx, double ddy): ddx(ddx), ddy(ddy) {}
+   Acceleration(double total, Angle angle);
    Acceleration(double total, double angle, Position position);
+   
    double getX() { return ddx; }
    double getY() { return ddy; }
 };
