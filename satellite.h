@@ -9,6 +9,7 @@
 #include "simulatorObject.h"
 #include "uiDraw.h"
 #include "input.h"
+#include "projectile.h"
 
 class Satellite: public SimulatorObject
 {
@@ -60,8 +61,8 @@ public:
    {
       if (applyThrust)
       {
-         double angle = atan2(gravitySource.getX() - position.getMetersX(), gravitySource.getY() - position.getMetersY());
-         //Acceleration thrust(30.0, 
+         Acceleration thrust(30.0, rotationAngle);
+         velocity.add(thrust, 5);
       }
       SimulatorObject::advance(gravitySource);
    }
@@ -74,5 +75,10 @@ public:
    void rotate()
    {
       
+   }
+   
+   Projectile & shoot()
+   {
+      return *new Projectile();
    }
 };
