@@ -31,6 +31,22 @@ public:
    }
 };
 
+class Hubble : public Satellite
+{
+public:
+   Hubble()
+   {
+      position = Position(0, -42164000.0);
+      velocity = Velocity(3100.0, 0.0);
+      radius = 10;
+   }
+
+   virtual void draw()
+   {
+      drawHubble(position, rotationAngle.getRadians());
+   }
+};
+
 class DreamChaser: public Satellite
 {
 private:
