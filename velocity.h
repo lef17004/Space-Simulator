@@ -24,7 +24,13 @@ public:
    void add(Acceleration acceleration)
    {
       dx = dx + acceleration.getX() * TIME;
-      dy  = dy + acceleration.getY() * TIME;
+      dy = dy + acceleration.getY() * TIME;
+   }
+   
+   void add(Acceleration acceleration, double time)
+   {
+      dx = dx + acceleration.getX() * time;
+      dy = dy + acceleration.getY() * time;
    }
    
    double getX() const { return dx; }

@@ -18,7 +18,7 @@ public:
       position = Position(0, 0);
       velocity = Velocity(0, 0);
       radius = EARTH_RADIUS;
-      rotationAngle = Angle(0);
+      rotationAngle = Angle();
    }
    
    virtual void rotate()

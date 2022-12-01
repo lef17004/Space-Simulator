@@ -7,10 +7,18 @@
 
 #pragma once
 #include "simulatorObject.h"
-
+#include "satellite.h"
 
 
 class Wreckage: public SimulatorObject
 {
    
+};
+
+
+
+
+class Fragment: public Satellite
+{
+   friend class TestSatellite;
 };

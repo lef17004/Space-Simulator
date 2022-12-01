@@ -60,6 +60,7 @@ public:
    {
       if (applyThrust)
       {
+         double angle = atan2(gravitySource.getX() - position.getMetersX(), gravitySource.getY() - position.getMetersY());
          //Acceleration thrust(30.0, 
       }
       SimulatorObject::advance(gravitySource);

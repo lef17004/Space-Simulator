@@ -25,14 +25,7 @@ using namespace std;
 class Angle
 {
 public:
-   Angle(): angleRadians(0) {}
-   Angle(double amount, bool degrees = true)
-   {
-      if (degrees)
-         setDegrees(amount);
-      else
-         setRadians(amount);
-   }
+   
    // Setters
    void setDegrees(double degrees);
    void setRadians(double radians) { angleRadians = normalize(radians); }
