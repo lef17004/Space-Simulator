@@ -51,9 +51,6 @@
     <ClCompile Include="satellite.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="satellites.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="simulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -129,7 +126,7 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="angle.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
