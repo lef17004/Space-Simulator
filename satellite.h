@@ -30,6 +30,11 @@ public:
    {
       drawSputnik(position, rotationAngle.getRadians());
    }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      
+   }
 };
 
 class GPS : public Satellite

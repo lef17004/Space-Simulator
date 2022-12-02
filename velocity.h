@@ -47,6 +47,8 @@ public:
    void setX(double x) { dx = x; }
    void setY(double y) { dy = y; }
    
+   double getTotal() const { return sqrt(dx * dx + dy * dy); }
+   
    Velocity & operator == (Velocity & rhs)
    {
       dx = rhs.dx;
