@@ -65,6 +65,67 @@ public:
    }
 };
 
+class SatelliteTest
+{
+private:
+   double x;
+   double y;
+   double dx;
+   double dy;
+   
+public:
+   SatelliteTest()
+   {
+     
+      x = 0.0;
+      y = 8000000.0;
+      dx = -7900.0;
+      dy = 0.0;
+   }
+   
+   SatelliteTest(double x, double y, double dx, double dy): x(x), y(y), dx(dx), dy(dy)
+   {
+   
+   }
+   
+   void advance()
+   {
+      double time = 48.0;
+      double earthRadius = 6378000.0;
+      double gravityAtSeaLevel = -9.80665;
+      
+      double angle = atan2(0 - x, 0 - y);
+      double heightAboveEarth = sqrt(x * x + y * y) - earthRadius;
+      
+      double gravityAccel = gravityAtSeaLevel * (earthRadius / (earthRadius + heightAboveEarth )) * (earthRadius / (earthRadius + heightAboveEarth ));
+      
+      double ddx = -gravityAccel * sin(angle);
+      double ddy = -gravityAccel * cos(angle);
+      
+      
+      double newDx = dx + ddx * time;
+      double newDy = dy + ddy * time;
+      
+      double newX = x + newDx * time + 0.5 * ddx * time * time;
+      double newY = y + newDy * time + 0.5 * ddy * time * time;
+      
+      newX = x + newDx * time;
+      newY = y + newDy * time;
+      
+      dx = newDx;
+      dy = newDy;
+      x = newX;
+      y = newY;
+      
+   }
+   
+   void draw()
+   {
+      //drawHubble(Position(x, y), 0);
+   }
+    
+};
+
 
 /*************************************************************************
  * Demo
@@ -89,7 +150,7 @@ public:
    
    Earth earth;
    double angleEarth;
-   
+   SatelliteTest test;
    Simulator simulator;
 };
 
@@ -114,6 +175,8 @@ void callBack(const Interface* pUI, void* p)
    
    pDemo->simulator.simulateFrame(input);
    
+   pDemo->test.advance();
+   pDemo->test.draw();
    // rotate the earth
 //   double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
 //   pDemo->spud.advance(SimulatorObject());

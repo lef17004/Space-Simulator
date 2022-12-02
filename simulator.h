@@ -27,8 +27,6 @@ private:
       for (auto star: starArray)
          star.advance();
       
-      earth.advance(earth);
-      ship.advance(earth);
       
       for (auto object : simulatorObjects)
          object->advance(earth);
@@ -39,8 +37,6 @@ private:
       for (auto star: starArray)
          star.draw();
       
-      earth.draw();
-      ship.draw();
       for (auto object : simulatorObjects)
          object->draw();
    }
@@ -89,9 +85,14 @@ public:
       simulatorObjects.push_back(new GPS(Position(0.0,           26560000.0),  Velocity(-3880.0,      0.0)));
       simulatorObjects.push_back(new GPS(Position(23001634.72,   13280000.0),  Velocity(-1940.0,  3360.18)));
       simulatorObjects.push_back(new GPS(Position(23001634.72,  -13280000.0),  Velocity(1940.0,   3360.18)));
-      simulatorObjects.push_back(new GPS(Position(0.0,           26560000.0),  Velocity(3880.0,       0.0)));
+      simulatorObjects.push_back(new GPS(Position(0.0,           -26560000.0),  Velocity(3880.0,       0.0)));
       simulatorObjects.push_back(new GPS(Position(-23001634.72, -13280000.0),  Velocity(1940.0,  -3360.18)));
       simulatorObjects.push_back(new GPS(Position(-23001634.72,  13280000.0),  Velocity(-1940.0, -3360.18)));
+      
+      
+      
+      simulatorObjects.push_back(&earth);
+      simulatorObjects.push_back(&ship);
    }
    
    void simulateFrame(const Input & input)

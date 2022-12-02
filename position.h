@@ -23,10 +23,6 @@ class Acceleration;
 class Velocity;
 
 
-enum Quadrant
-{
-   Quad1, Quad2, Quad3, Quad4, INVALID
-};
 
 /*********************************************
  * Position

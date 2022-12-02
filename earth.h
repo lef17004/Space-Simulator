@@ -7,6 +7,7 @@
 
 #include "simulatorObject.h"
 #include "uiDraw.h"
+#include "collisionBody.h"
 #pragma once
 
 
@@ -31,8 +32,19 @@ public:
       drawEarth(position, rotationAngle.getRadians());
    }
    
-   virtual void advance(SimulatorObject earth)
+   virtual void advance(const SimulatorObject & earth)
    {
       rotate();
    }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      
+   }
+   
+   CollisionBody getCollisionBody2()
+   {
+      return CollisionBody(position.getPixelsX(), position.getPixelsY(), velocity.getX(), velocity.getY(), 50.0);
+   }
+
 };

@@ -130,8 +130,8 @@
 			isa = PBXGroup;
 			children = (
 				C11C7EA625780B5C00EA4B2E /* Lab07.cpp */,
-				33DCC6D729087EFB000D6FD5 /* acceleration.cpp */,
 				3378392D2925AE5E000BCB9F /* angle.cpp */,
+				33DCC6D729087EFB000D6FD5 /* acceleration.cpp */,
 				333328FD291B1994006814A9 /* collisionBody.cpp */,
 				33332909291B1AB9006814A9 /* earth.cpp */,
 				3333290F291B1B11006814A9 /* lifespan.cpp */,

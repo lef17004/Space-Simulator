@@ -21,7 +21,7 @@ void SimulatorObject::advance(const SimulatorObject & gravitySource)
    
    Acceleration accel(gravity, angle, position);
    velocity.add(accel);
-   position.add(velocity, accel);
+   position.add(velocity);
    rotate();
 }
 
