@@ -164,7 +164,7 @@ public:
    {
       drawCrewDragonLeft(position, rotationAngle.getRadians());
    }
-
+   
 };
 
 class DragonRight : public Wreckage
