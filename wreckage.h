@@ -9,13 +9,29 @@
 #include "simulatorObject.h"
 #include "satellite.h"
 
-class HubbleComputer : public Satellite
+class Wreckage: public SimulatorObject
 {
 public:
-   HubbleComputer()
+   Wreckage() {}
+   Wreckage (const Position & position, const Velocity & velocity)
    {
+      
+   }
+};
+
+class HubbleComputer : public Wreckage
+{
+public:
+   HubbleComputer(const Position & position, const Velocity & velocity)
+   {
+      Wreckage(position, velocity);
       radius = 7;
    }
+   void draw()
+   {
+      drawHubbleComputer(position, rotationAngle.getRadians());
+   }
+   
 };
 
 class HubbleLeft : public Satellite
@@ -36,10 +52,7 @@ public:
    }
 };
 
-class Wreckage: public SimulatorObject
-{
-   
-};
+
 
 
 
