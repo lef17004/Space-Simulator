@@ -19,7 +19,7 @@ class Simulator
 private:
    Earth earth;
    std::list<SimulatorObject *> simulatorObjects;
-   std::array<Star, 1000> starArray;
+   std::array<Star, 1750> starArray;
    DreamChaser ship;
    
    void advance()
@@ -58,7 +58,8 @@ private:
          auto it2 = it;
          for (it2++; it2 != simulatorObjects.end(); it2++)
          {
-            if (CollisionBody::isCollision2((*it)->getCollisionBody2(), (*it2)->getCollisionBody2()))
+            if (CollisionBody::isCollision2((*it)->getCollisionBody2(), (*it2)->getCollisionBody2()) &&
+                (*it)->isAlive() && (*it2)->isAlive())
             {
                (*it)->hit(simulatorObjects);
                (*it2)->hit(simulatorObjects);

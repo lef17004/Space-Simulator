@@ -10,6 +10,7 @@
 #include "uiDraw.h"
 #include "input.h"
 #include "projectile.h"
+#include "wreckage.h"
 
 class Satellite: public SimulatorObject
 {
@@ -33,7 +34,8 @@ public:
    
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
-      
+      SimulatorObject::hit(simulatorCollection);
+      //simulatorCollection.push_back(new GPSCenter(position, velocity));
    }
 };
 
@@ -51,6 +53,14 @@ public:
    {
       drawGPS(position, rotationAngle.getRadians());
    }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      SimulatorObject::hit(simulatorCollection);
+      simulatorCollection.push_back(new GPSCenter(position, velocity));
+      simulatorCollection.push_back(new GPSLeft(position, velocity));
+      simulatorCollection.push_back(new GPSRight(position, velocity));
+   }
 };
 
 class Hubble : public Satellite
@@ -66,6 +76,12 @@ public:
    virtual void draw()
    {
       drawHubble(position, rotationAngle.getRadians());
+   }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      SimulatorObject::hit(simulatorCollection);
+      simulatorCollection.push_back(new GPSCenter(position, velocity));
    }
 };
 
@@ -85,6 +101,11 @@ public:
       drawStarlink(position, rotationAngle.getRadians());
    }
    
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      SimulatorObject::hit(simulatorCollection);
+      simulatorCollection.push_back(new GPSCenter(position, velocity));
+   }
    
 };
 
@@ -101,6 +122,12 @@ public:
    virtual void draw()
    {
       drawCrewDragon(position, rotationAngle.getRadians());
+   }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      SimulatorObject::hit(simulatorCollection);
+      simulatorCollection.push_back(new GPSCenter(position, velocity));
    }
 };
 
