@@ -168,6 +168,7 @@ public:
       velocity = Velocity(0, -2000);
       radius = 10;
       applyThrust = false;
+      rotationAmount = 0;
    }
    
    void applyInput(const Input & input)
@@ -184,7 +185,7 @@ public:
    {
       if (applyThrust)
       {
-         Acceleration thrust(30.0, rotationAngle);
+         Acceleration thrust(10.0, rotationAngle);
          velocity.add(thrust, 5);
       }
       SimulatorObject::advance(gravitySource);
@@ -195,10 +196,6 @@ public:
       drawShip(position, rotationAngle.getRadians(), applyThrust);
    }
    
-   void rotate()
-   {
-      
-   }
    
    Projectile * shoot()
    {
