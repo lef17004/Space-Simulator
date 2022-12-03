@@ -35,7 +35,10 @@ public:
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
       SimulatorObject::hit(simulatorCollection);
-      //simulatorCollection.push_back(new GPSCenter(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
    }
 };
 
@@ -60,6 +63,8 @@ public:
       simulatorCollection.push_back(new GPSCenter(position, velocity));
       simulatorCollection.push_back(new GPSLeft(position, velocity));
       simulatorCollection.push_back(new GPSRight(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
    }
 };
 
@@ -81,7 +86,10 @@ public:
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
       SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new GPSCenter(position, velocity));
+      simulatorCollection.push_back(new HubbleTelescope(position, velocity));
+      simulatorCollection.push_back(new HubbleLeft(position, velocity));
+      simulatorCollection.push_back(new HubbleRight(position, velocity));
+      simulatorCollection.push_back(new HubbleComputer(position, velocity));
    }
 };
 
@@ -104,7 +112,10 @@ public:
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
       SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new GPSCenter(position, velocity));
+      simulatorCollection.push_back(new StarlinkBody(position, velocity));
+      simulatorCollection.push_back(new StarlinkArray(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
    }
    
 };
@@ -127,7 +138,11 @@ public:
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
       SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new GPSCenter(position, velocity));
+      simulatorCollection.push_back(new DragonLeft(position, velocity));
+      simulatorCollection.push_back(new DragonRight(position, velocity));
+      simulatorCollection.push_back(new DragonLeft(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
    }
 };
 
@@ -179,5 +194,15 @@ public:
    Projectile * shoot()
    {
       return new Projectile(position, velocity, rotationAngle);
+   }
+   
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
+   {
+      SimulatorObject::hit(simulatorCollection);
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
+      simulatorCollection.push_back(new Fragment(position, velocity));
    }
 };
