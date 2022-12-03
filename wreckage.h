@@ -38,6 +38,17 @@ public:
    
 };
 
+class Fragment: public Wreckage
+{
+public:
+   Fragment(const Position & position, const Velocity & velocity): Wreckage(position, velocity)
+   {
+      radius = 2;
+      
+   }
+};
+
+
 class GPSCenter : public Wreckage
 {
 public:
@@ -287,7 +298,3 @@ public:
 };
 
 
-class Fragment: public Wreckage
-{
- 
-};
