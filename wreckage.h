@@ -8,42 +8,59 @@
 #pragma once
 #include "simulatorObject.h"
 #include "uiDraw.h"
+#include "lifespan.h"
 
-class Wreckage: public SimulatorObject
-{
+class Wreckage : public SimulatorObject
+{   
 public:
    Wreckage() {}
-   Wreckage (const Position & position, const Velocity & velocity)
+   Wreckage(const Position& position, const Velocity& velocity)
    {
       double randomAngle = random(1, 360);
       Angle angle;
       angle.setDegrees(randomAngle);
       double totalVelocity = velocity.getTotal();
-      
+
       this->velocity = velocity;
       //this->velocity.setX(0);
       //this->velocity.setY(0);
-   
+
       this->velocity.add(random(5000, 9000), angle);
-      
-      
+
+
       int pixelsX = 20.0 * sin(angle.getRadians());
       int pixelsY = 20.0 * cos(angle.getRadians());
-      
+
       this->position = position;
       this->position.setPixelsX(this->position.getPixelsX() + pixelsX);
       this->position.setPixelsY(this->position.getPixelsY() + pixelsY);
       alive = true;
    }
-   
 };
 
-class Fragment: public Wreckage
+class Fragment : public Wreckage
 {
+private:
+   LifeSpan life;
 public:
-   Fragment(const Position & position, const Velocity & velocity): Wreckage(position, velocity)
+   Fragment(const Position& position, const Velocity& velocity) : Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 2;
+      life.setLife(random(50, 100));
+      rotationAmount = 0.25;
+   }
+   void draw()
+   {
+      drawFragment(position, rotationAngle.getRadians());
+   }
+   void advance(const SimulatorObject& gravitySource)
+   {
+      SimulatorObject::advance(gravitySource);
+      life.advance();
+
+      if (!life.isAlive())
+         kill();
    }
 };
 
@@ -53,6 +70,7 @@ class GPSCenter : public Wreckage
 public:
    GPSCenter(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 7;
    }
    void draw()
@@ -73,6 +91,7 @@ class GPSLeft : public Wreckage
 public:
    GPSLeft(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 8;
    }
    void draw()
@@ -94,6 +113,7 @@ class GPSRight : public Wreckage
 public:
    GPSRight(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 8;
    }
    void draw()
@@ -114,6 +134,7 @@ class HubbleTelescope : public Wreckage
 public:
    HubbleTelescope(const Position& position, const Velocity& velocity) : Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 10;
    }
    void draw()
@@ -134,6 +155,7 @@ class HubbleComputer : public Wreckage
 public:
    HubbleComputer(const Position & position, const Velocity & velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 7;
    }
    void draw()
@@ -153,6 +175,7 @@ class HubbleLeft : public Wreckage
 public:
    HubbleLeft(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 8;
    }
    void draw()
@@ -172,6 +195,7 @@ class HubbleRight : public Wreckage
 public:
    HubbleRight(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 8;
    }
    void draw()
@@ -191,6 +215,7 @@ class StarlinkBody : public Wreckage
 public:
    StarlinkBody(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 2;
    }
    void draw()
@@ -211,6 +236,7 @@ class StarlinkArray : public Wreckage
 public:
    StarlinkArray(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 4;
    }
    void draw()
@@ -231,6 +257,7 @@ class DragonCenter : public Wreckage
 public:
    DragonCenter(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 6;
    }
    void draw()
@@ -252,6 +279,7 @@ class DragonLeft : public Wreckage
 public:
    DragonLeft(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 6;
    }
    void draw()
@@ -271,6 +299,7 @@ class DragonRight : public Wreckage
 public:
    DragonRight(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
+      Wreckage(position, velocity);
       radius = 6;
    }
    void draw()
