@@ -27,8 +27,8 @@ public:
       this->velocity.add(random(5000, 9000), angle);
       
       
-      int pixelsX = 4.0 * sin(angle.getRadians());
-      int pixelsY = 4.0 * cos(angle.getRadians());
+      int pixelsX = 20.0 * sin(angle.getRadians());
+      int pixelsY = 20.0 * cos(angle.getRadians());
       
       this->position = position;
       this->position.setPixelsX(this->position.getPixelsX() + pixelsX);
@@ -43,7 +43,6 @@ class GPSCenter : public Wreckage
 public:
    GPSCenter(const Position& position, const Velocity& velocity): Wreckage(position, velocity)
    {
-      //Wreckage(position, velocity);
       radius = 7;
    }
    void draw()
