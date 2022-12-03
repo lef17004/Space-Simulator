@@ -19,7 +19,9 @@ class Satellite: public SimulatorObject
       SimulatorObject::advance(gravitySource);
       if (random(1, 1000) == 50)
       {
-         rotationAmount = 0.5;
+         rotationAmount = 0.25;
+         velocity.setX(velocity.getX() + 200);
+         velocity.setY(velocity.getY() + 200);
       }
    }
 };
