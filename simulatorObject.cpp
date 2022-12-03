@@ -47,7 +47,7 @@ void SimulatorObject::hit(list<SimulatorObject*> & simulatorCollection)
  ******************************************************************************/
 void SimulatorObject::rotate()
 {
-   this->rotationAngle.add(-0.0040);
+   this->rotationAngle.add(rotationAmount);
 }
 
 /******************************************************************************

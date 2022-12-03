@@ -23,6 +23,7 @@ protected:
    Angle rotationAngle;
    int radius;
    bool alive;
+   double rotationAmount = 0.01;
    
    
 public:
@@ -30,10 +31,8 @@ public:
                       velocity(Velocity()),
                       radius(0),
    alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
-   SimulatorObject(Position position, Velocity velocity, int radius):
-                      position(position),
-                      velocity(velocity),
-   radius(radius), alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
+   SimulatorObject(Position position, Velocity velocity, int radius): position(position), velocity(velocity),
+radius(radius), alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
    
    SimulatorObject(const SimulatorObject & rhs)
    {

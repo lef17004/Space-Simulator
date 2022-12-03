@@ -14,7 +14,14 @@
 
 class Satellite: public SimulatorObject
 {
-   
+   void advance(const SimulatorObject & gravitySource)
+   {
+      SimulatorObject::advance(gravitySource);
+      if (random(1, 1000) == 50)
+      {
+         rotationAmount = 0.5;
+      }
+   }
 };
 
 class Sputnik: public Satellite
