@@ -38,17 +38,13 @@ public:
    {
       drawFragment(position, rotationAngle.getRadians());
    }
-   void advance(const SimulatorObject& gravitySource)
-   {
-      SimulatorObject::advance(gravitySource);
-      life.advance();
-
-      if (!life.isAlive())
-         kill();
-   }
+   void advance(const SimulatorObject& gravitySource);
 };
 
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class GPSCenter : public Wreckage
 {
 public:
@@ -61,15 +57,13 @@ public:
    {
       drawGPSCenter(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class GPSLeft : public Wreckage
 {
 public:
@@ -82,16 +76,14 @@ public:
    {
       drawGPSLeft(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class GPSRight : public Wreckage
 {
 public:
@@ -104,15 +96,13 @@ public:
    {
       drawGPSRight(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class HubbleTelescope : public Wreckage
 {
 public:
@@ -125,15 +115,12 @@ public:
    {
       drawHubbleTelescope(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class HubbleComputer : public Wreckage
 {
 public:
@@ -146,14 +133,13 @@ public:
    {
       drawHubbleComputer(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class HubbleLeft : public Wreckage
 {
 public:
@@ -166,14 +152,11 @@ public:
    {
       drawHubbleLeft(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
-};
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);};
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class HubbleRight : public Wreckage
 {
 public:
@@ -186,14 +169,13 @@ public:
    {
       drawHubbleRight(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class StarlinkBody : public Wreckage
 {
 public:
@@ -206,15 +188,13 @@ public:
    {
       drawStarlinkBody(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class StarlinkArray : public Wreckage
 {
 public:
@@ -227,15 +207,13 @@ public:
    {
       drawStarlinkArray(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+
+/******************************************************************************
+ *
+ ******************************************************************************/
 class DragonCenter : public Wreckage
 {
 public:
@@ -248,16 +226,12 @@ public:
    {
       drawCrewDragonCenter(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class DragonLeft : public Wreckage
 {
 public:
@@ -270,14 +244,12 @@ public:
    {
       drawCrewDragonLeft(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class DragonRight : public Wreckage
 {
 public:
@@ -290,12 +262,7 @@ public:
    {
       drawCrewDragonRight(position, rotationAngle.getRadians());
    }
-   virtual void hit(std::list<SimulatorObject*>& simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
 
