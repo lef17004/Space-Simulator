@@ -22,34 +22,17 @@ public:
    Velocity(): dx(0), dy(0) {}
    Velocity(double dx, double dy): dx(dx), dy(dy) {}
    
-   void add(Acceleration acceleration)
-   {
-      dx = dx + acceleration.getX() * TIME;
-      dy = dy + acceleration.getY() * TIME;
-   }
-   
-   void add(Acceleration acceleration, double time)
-   {
-      dx = dx + acceleration.getX() * time;
-      dy = dy + acceleration.getY() * time;
-   }
-   
-   void add(double total, Angle angle)
-   {
-      
-      std::cout << angle.getRadians() << std::endl;
-      dx += total * sin(angle.getRadians());
-      dy += total * cos(angle.getRadians());
-   }
+   void add(Acceleration acceleration);
+   void add(Acceleration acceleration, double time);
+   void add(double total, Angle angle);
    
    double getX() const { return dx; }
    double getY() const { return dy; }
    void setX(double x) { dx = x; }
    void setY(double y) { dy = y; }
-   
    double getTotal() const { return sqrt(dx * dx + dy * dy); }
    
-   Velocity & operator == (Velocity & rhs)
+   Velocity & operator == (const Velocity & rhs)
    {
       dx = rhs.dx;
       dy = rhs.dy;

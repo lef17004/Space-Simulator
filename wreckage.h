@@ -10,31 +10,19 @@
 #include "uiDraw.h"
 #include "lifespan.h"
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Wreckage : public SimulatorObject
 {   
 public:
    Wreckage() {}
-   Wreckage(const Position& position, const Velocity& velocity)
-   {
-      double randomAngle = random(1, 360);
-      Angle angle;
-      angle.setDegrees(randomAngle);
-      double totalVelocity = velocity.getTotal();
-
-      this->velocity = velocity;
-      this->velocity.add(random(1000, 4000), angle);
-
-
-      int pixelsX = 20.0 * sin(angle.getRadians());
-      int pixelsY = 20.0 * cos(angle.getRadians());
-
-      this->position = position;
-      this->position.setPixelsX(this->position.getPixelsX() + pixelsX);
-      this->position.setPixelsY(this->position.getPixelsY() + pixelsY);
-      alive = true;
-   }
+   Wreckage(const Position& position, const Velocity& velocity);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Fragment : public Wreckage
 {
 private:
@@ -42,7 +30,6 @@ private:
 public:
    Fragment(const Position& position, const Velocity& velocity) : Wreckage(position, velocity)
    {
-      Wreckage(position, velocity);
       radius = 2;
       life.setLife(random(50, 100));
       rotationAmount = 0.25;
@@ -56,8 +43,8 @@ public:
       SimulatorObject::advance(gravitySource);
       life.advance();
 
-//      if (!life.isAlive())
-//         kill();
+      if (!life.isAlive())
+         kill();
    }
 };
 

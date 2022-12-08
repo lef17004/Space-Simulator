@@ -12,20 +12,17 @@
 #include "projectile.h"
 #include "wreckage.h"
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Satellite: public SimulatorObject
 {
-   void advance(const SimulatorObject & gravitySource)
-   {
-      SimulatorObject::advance(gravitySource);
-      if (random(1, 3000) == 50)
-      {
-         rotationAmount = 0.15;
-         velocity.setX(velocity.getX() + 50);
-         velocity.setY(velocity.getY() + 50);
-      }
-   }
+   void advance(const SimulatorObject & gravitySource);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Sputnik: public Satellite
 {
 public:
@@ -41,16 +38,12 @@ public:
       drawSputnik(position, rotationAngle.getRadians());
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class GPS : public Satellite
 {
 public:
@@ -68,17 +61,12 @@ public:
       drawGPS(position, rotationAngle.getRadians());
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new GPSCenter(position, velocity));
-      simulatorCollection.push_back(new GPSLeft(position, velocity));
-      simulatorCollection.push_back(new GPSRight(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Hubble : public Satellite
 {
 public:
@@ -94,17 +82,12 @@ public:
       drawHubble(position, rotationAngle.getRadians());
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new HubbleTelescope(position, velocity));
-      simulatorCollection.push_back(new HubbleLeft(position, velocity));
-      simulatorCollection.push_back(new HubbleRight(position, velocity));
-      simulatorCollection.push_back(new HubbleComputer(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
 };
 
-
+/******************************************************************************
+ *
+ ******************************************************************************/
 class StarLink: public Satellite
 {
 public:
@@ -120,17 +103,13 @@ public:
       drawStarlink(position, rotationAngle.getRadians());
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new StarlinkBody(position, velocity));
-      simulatorCollection.push_back(new StarlinkArray(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
    
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Dragon: public Satellite
 {
 public:
@@ -146,17 +125,12 @@ public:
       drawCrewDragon(position, rotationAngle.getRadians());
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new DragonLeft(position, velocity));
-      simulatorCollection.push_back(new DragonRight(position, velocity));
-      simulatorCollection.push_back(new DragonLeft(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
 };
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class DreamChaser: public Satellite
 {
 private:
@@ -173,44 +147,19 @@ public:
       rotationAmount = 0;
    }
    
-   void applyInput(const Input & input)
-   {
-      if (input.isLeftPressed())
-         rotationAngle.add(-0.1);
-      if (input.isRightPressed())
-         rotationAngle.add(0.1);
-      applyThrust = input.isDownPressed();
-      
-   }
-   
-   void advance(const SimulatorObject & gravitySource)
-   {
-      if (applyThrust)
-      {
-         Acceleration thrust(30.0, rotationAngle);
-         velocity.add(thrust, 3.5);
-      }
-      SimulatorObject::advance(gravitySource);
-   }
+   void applyInput(const Input & input);
+   void advance(const SimulatorObject & gravitySource);
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
    
    void draw()
    {
       drawShip(position, rotationAngle.getRadians(), applyThrust);
    }
    
-   
    Projectile * shoot()
    {
       return new Projectile(position, velocity, rotationAngle);
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      SimulatorObject::hit(simulatorCollection);
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-      simulatorCollection.push_back(new Fragment(position, velocity));
-   }
+   
 };

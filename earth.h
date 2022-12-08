@@ -11,20 +11,15 @@
 #include "asteriod.h"
 #pragma once
 
-
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Earth : public SimulatorObject
 {
 private:
    int life;
 public:
-   Earth()
-   {
-      position = Position(0, 0);
-      velocity = Velocity(0, 0);
-      radius = EARTH_RADIUS;
-      rotationAngle = Angle();
-      life = 10;
-   }
+   Earth();
    
    virtual void rotate()
    {
@@ -41,23 +36,7 @@ public:
       rotate();
    }
    
-   virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
-   {
-      if (life == 0)
-      {
-         kill();
-         radius = 0;
-         return;
-      }
-         
-      life--;
-      if (life == 0)
-      {
-         for (int i = 0; i < 60; i++)
-            simulatorCollection.push_back(new Asteroid(position, velocity));
-      }
-     
-   }
+   virtual void hit(std::list<SimulatorObject*> & simulatorCollection);
    
    CollisionBody getCollisionBody2()
    {
