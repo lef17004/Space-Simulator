@@ -8,15 +8,32 @@
 #include "position.h"
 #include "angle.h"
 
-Acceleration::Acceleration(double total, double angle, Position position)
+/******************************************************************************
+ *
+ ******************************************************************************/
+Acceleration::Acceleration(double total, double radians, bool reverse)
 {
-   ddx = -total * sin(angle);
-   ddy = -total * cos(angle);
+   ddx = total * sin(radians);
+   ddy = total * cos(radians);
+   
+   if (reverse)
+      this->reverse();
 }
 
-
-Acceleration::Acceleration(double total, Angle angle)
+/******************************************************************************
+ *
+ ******************************************************************************/
+Acceleration::Acceleration(double total, const Angle & angle)
 {
    ddx = total * sin(angle.getRadians());
    ddy = total * cos(angle.getRadians());
+}
+
+/******************************************************************************
+ *
+ ******************************************************************************/
+void Acceleration::reverse()
+{
+   ddx *= -1;
+   ddy *= -1;
 }

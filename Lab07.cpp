@@ -54,7 +54,7 @@ public:
       double innerEquation = EARTH_RADIUS / (EARTH_RADIUS + heightAboveEarth);
       double gravity = GRAVITY_SEA_LEVEL * innerEquation * innerEquation;
 
-      Acceleration accel(gravity, angle, position);
+      Acceleration accel(gravity, angle, false);
       velocity.add(accel);
       position.add(velocity, accel);
    }
@@ -174,23 +174,6 @@ void callBack(const Interface* pUI, void* p)
    input.setSpacePressed(pUI->isSpace());
    
    pDemo->simulator.simulateFrame(input);
-   
-   pDemo->test.advance();
-   pDemo->test.draw();
-   // rotate the earth
-//   double rotationSpeed = -(2.0 * M_PI / 30.0 ) * (1440 / 86400.0);
-//   pDemo->spud.advance(SimulatorObject());
-//   pDemo->sat.advance();
-//
-//   pDemo->sim.advance(pDemo->earth);
-//   pDemo->sim.draw();
-//   pDemo->spud.draw();
-//
-//
-// //
-//   pDemo->earth.advance(pDemo->earth);
-//   pDemo->earth.draw();
-   
 }
 
 double Position::metersFromPixels = 40.0;

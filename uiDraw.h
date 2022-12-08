@@ -156,3 +156,4 @@ int    random(int    min, int    max);
 double random(double min, double max);
 
 Position rotate2(const Position& origin, double x, double y, double rotation);
+void drawSmallAsteroid( const Position & center, int rotation);

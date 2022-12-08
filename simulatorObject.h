@@ -30,9 +30,13 @@ public:
    SimulatorObject(): position(Position()),
                       velocity(Velocity()),
                       radius(0),
-   alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
+                      alive(true)
+   {
+
+      
+   }
    SimulatorObject(Position position, Velocity velocity, int radius): position(position), velocity(velocity),
-radius(radius), alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
+radius(radius), alive(true) {}
    
    SimulatorObject(const SimulatorObject & rhs)
    {
@@ -69,7 +73,7 @@ radius(radius), alive(true) {rotationAngle.setRadians(M_PI - 0.9);}
    void setX(double x) { position.setMetersX(x); }
    double getY() const {return position.getMetersY(); }
    void setY(double y) { position.setMetersY(y); }
-   Velocity getVelocity() const { return velocity; }
+   Velocity& getVelocity()  { return velocity; }
    void setVelocity(const Velocity & velocity) { this->velocity = velocity; }
    double getDx() const { return velocity.getX(); }
    void setDx(double dx) { velocity.setX(dx); }

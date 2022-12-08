@@ -17,11 +17,11 @@ class Satellite: public SimulatorObject
    void advance(const SimulatorObject & gravitySource)
    {
       SimulatorObject::advance(gravitySource);
-      if (random(1, 1000) == 50)
+      if (random(1, 3000) == 50)
       {
-         rotationAmount = 0.25;
-         velocity.setX(velocity.getX() + 200);
-         velocity.setY(velocity.getY() + 200);
+         rotationAmount = 0.15;
+         velocity.setX(velocity.getX() + 50);
+         velocity.setY(velocity.getY() + 50);
       }
    }
 };
@@ -54,11 +54,13 @@ public:
 class GPS : public Satellite
 {
 public:
-   GPS(Position givenPosition, Velocity givenVelocity)
+   GPS(const Position & givenPosition, const Velocity & givenVelocity, const Angle & angle)
    {
       position = givenPosition;
       velocity = givenVelocity;
       radius = 12;
+      rotationAngle.setRadians(angle.getRadians());
+      rotationAmount = -0.007;
    }
 
    virtual void draw()
@@ -185,8 +187,8 @@ public:
    {
       if (applyThrust)
       {
-         Acceleration thrust(10.0, rotationAngle);
-         velocity.add(thrust, 5);
+         Acceleration thrust(30.0, rotationAngle);
+         velocity.add(thrust, 3.5);
       }
       SimulatorObject::advance(gravitySource);
    }

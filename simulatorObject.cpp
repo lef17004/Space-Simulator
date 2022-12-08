@@ -19,7 +19,7 @@ void SimulatorObject::advance(const SimulatorObject & gravitySource)
    double innerEquation = gravitySource.getRadius() / (gravitySource.getRadius() + heightAboveEarth);
    double gravity = GRAVITY_SEA_LEVEL * innerEquation * innerEquation;
    
-   Acceleration accel(gravity, angle, position);
+   Acceleration accel(gravity, angle, true);
    velocity.add(accel);
    position.add(velocity);
    rotate();

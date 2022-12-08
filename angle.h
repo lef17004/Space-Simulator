@@ -25,6 +25,11 @@ using namespace std;
 class Angle
 {
 public:
+   Angle(): angleRadians(0) {}
+   Angle(double radians)
+   {
+      setRadians(radians);
+   }
    
    // Setters
    void setDegrees(double degrees);
@@ -35,6 +40,12 @@ public:
    float getRadians() const { return angleRadians; }
    
    void add(double amount);
+   
+   Angle& operator = (const Angle& pt)
+   {
+      setRadians(pt.getRadians());
+      return *this;
+   }
    
 private:
    

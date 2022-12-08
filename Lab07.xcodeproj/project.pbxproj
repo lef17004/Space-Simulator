@@ -65,6 +65,7 @@
 		33332912291B1B5C006814A9 /* parts.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = parts.cpp; sourceTree = "<group>"; };
 		33332913291B1B5C006814A9 /* parts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = parts.h; sourceTree = "<group>"; };
 		33332915291C900A006814A9 /* testSimulatorObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSimulatorObject.h; sourceTree = "<group>"; };
+		3360CA24293BF1DD00CFBA44 /* asteriod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asteriod.h; sourceTree = "<group>"; };
 		3378392C2925AE42000BCB9F /* angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = angle.h; sourceTree = "<group>"; };
 		3378392D2925AE5E000BCB9F /* angle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = angle.cpp; sourceTree = "<group>"; };
 		33AAA2A6291DF94500CEAFF5 /* testSatellite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSatellite.h; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 				33DCC6D829087EFB000D6FD5 /* velocity.h */,
 				33332904291B1A2C006814A9 /* wreckage.h */,
 				33132C7D293825AC009D7F2D /* input.h */,
+				3360CA24293BF1DD00CFBA44 /* asteriod.h */,
 			);
 			name = Headers;
 			sourceTree = "<group>";

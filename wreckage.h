@@ -22,10 +22,7 @@ public:
       double totalVelocity = velocity.getTotal();
 
       this->velocity = velocity;
-      //this->velocity.setX(0);
-      //this->velocity.setY(0);
-
-      this->velocity.add(random(5000, 9000), angle);
+      this->velocity.add(random(1000, 4000), angle);
 
 
       int pixelsX = 20.0 * sin(angle.getRadians());
@@ -59,8 +56,8 @@ public:
       SimulatorObject::advance(gravitySource);
       life.advance();
 
-      if (!life.isAlive())
-         kill();
+//      if (!life.isAlive())
+//         kill();
    }
 };
 

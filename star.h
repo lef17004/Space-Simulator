@@ -24,7 +24,7 @@ public:
    
    void advance()
    {
-      phase *= 2;
+      phase += 1;
    }
    
    void draw()

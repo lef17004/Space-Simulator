@@ -8,11 +8,14 @@
 #include "simulatorObject.h"
 #include "uiDraw.h"
 #include "collisionBody.h"
+#include "asteriod.h"
 #pragma once
 
 
 class Earth : public SimulatorObject
 {
+private:
+   int life;
 public:
    Earth()
    {
@@ -20,6 +23,7 @@ public:
       velocity = Velocity(0, 0);
       radius = EARTH_RADIUS;
       rotationAngle = Angle();
+      life = 10;
    }
    
    virtual void rotate()
@@ -39,7 +43,20 @@ public:
    
    virtual void hit(std::list<SimulatorObject*> & simulatorCollection)
    {
-      
+      if (life == 0)
+      {
+         kill();
+         radius = 0;
+         return;
+      }
+         
+      life--;
+      if (life == 0)
+      {
+         for (int i = 0; i < 60; i++)
+            simulatorCollection.push_back(new Asteroid(position, velocity));
+      }
+     
    }
    
    CollisionBody getCollisionBody2()

@@ -939,4 +939,30 @@ double random(double min, double max)
 
 
 
-
+void drawSmallAsteroid( const Position & center, int rotation)
+{
+   // ultra simple point
+   struct PT
+   {
+      int x;
+      int y;
+   } points[] = 
+   {
+      {-5, 9},  {4, 8},   {8, 4},   
+      {8, -5},  {-2, -8}, {-2, -3}, 
+      {-8, -4}, {-8, 4},  {-5, 10}
+   };
+   
+   glBegin(GL_LINE_STRIP);
+   for (int i = 0; i < sizeof(points)/sizeof(PT); i++)
+   {
+      
+      Position pt;
+      pt.setPixelsX(center.getPixelsX() + points[i].x);
+      pt.setPixelsY(center.getPixelsY() + points[i].y);
+      rotate2(pt, center.getPixelsX(), center.getMetersY(), rotation);
+      glVertex2f(pt.getPixelsX(), pt.getPixelsY());
+   }
+   glEnd();
+}
+//Position rotate2(const Position& origin, double x, double y, double rotation)

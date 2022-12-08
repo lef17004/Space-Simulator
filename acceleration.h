@@ -8,8 +8,13 @@
 #pragma once
 #include "position.h"
 #include "angle.h"
+
+// Forward Declaration
 class Position;
 
+/******************************************************************************
+ *
+ ******************************************************************************/
 class Acceleration
 {
 private:
@@ -19,9 +24,10 @@ private:
 public:
    Acceleration(): ddx(0), ddy(0) {}
    Acceleration(double ddx, double ddy): ddx(ddx), ddy(ddy) {}
-   Acceleration(double total, Angle angle);
-   Acceleration(double total, double angle, Position position);
+   Acceleration(double total, const Angle & angle);
+   Acceleration(double total, double radians, bool reverse = false);
    
    double getX() { return ddx; }
    double getY() { return ddy; }
+   void reverse();
 };
