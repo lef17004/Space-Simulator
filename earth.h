@@ -12,7 +12,8 @@
 #pragma once
 
 /******************************************************************************
- *
+ * EARTH
+ * This class draws Earth and rotates it on screen.
  ******************************************************************************/
 class Earth : public SimulatorObject
 {

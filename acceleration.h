@@ -13,7 +13,8 @@
 class Position;
 
 /******************************************************************************
- *
+ * ACCELERATION
+ * This class calculates the acceleration throughout the game.
  ******************************************************************************/
 class Acceleration
 {

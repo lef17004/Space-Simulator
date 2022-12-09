@@ -14,6 +14,10 @@
 #include "star.h"
 #include "input.h"
 
+/******************************************************************************
+ * SIMULATOR
+ * This class sets up the simulator in the game.
+ ******************************************************************************/
 class Simulator
 {
 private:

@@ -1,6 +1,11 @@
 #pragma once
 #include "collisionBody.h"
 
+/******************************************************************************
+ * TESTCOLLISIONBODY
+ * This is a collection of tests for the test simulation that focuses on 
+ * the collisions throughout the game.
+ ******************************************************************************/
 class TestCollisionBody
 {
 public:

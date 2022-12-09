@@ -13,7 +13,8 @@
 #include "wreckage.h"
 
 /******************************************************************************
- *
+ * SATELLITE
+ * This class is the base class for the rest of the satellites.
  ******************************************************************************/
 class Satellite: public SimulatorObject
 {
@@ -21,7 +22,9 @@ class Satellite: public SimulatorObject
 };
 
 /******************************************************************************
- *
+ * SPUTNIK
+ * This class draws and accurately positions the Sputnik satellite so it can
+ * be displayed accurately in its orbit.
  ******************************************************************************/
 class Sputnik: public Satellite
 {
@@ -42,7 +45,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * GPS
+ * This class draws and accurately positions the base of the GPS Satellites so 
+ * they can be displayed accurately in their orbit.
  ******************************************************************************/
 class GPS : public Satellite
 {
@@ -65,7 +70,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * HUBBLE
+ * This class draws and accurately positions the Hubble Telescope so it can be
+ * accurately displayed in orbit.
  ******************************************************************************/
 class Hubble : public Satellite
 {
@@ -86,7 +93,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * STARLINK
+ * This class draws and accurately positions the Starlink Satellite so it can be
+ * accurately displayed in orbit.
  ******************************************************************************/
 class StarLink: public Satellite
 {
@@ -108,7 +117,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * DRAGON
+ * This class draws and accurately positions the Dragon Satellite so it can be
+ * accurately displayed in orbit.
  ******************************************************************************/
 class Dragon: public Satellite
 {
@@ -129,7 +140,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * DREAMCHASER
+ * This class draws the DreamChaser and holds the mechanics for movement
+ * and deploying projectiles.
  ******************************************************************************/
 class DreamChaser: public Satellite
 {

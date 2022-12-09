@@ -25,7 +25,7 @@ class Velocity;
 
 
 /*********************************************
- * Position
+ * POSITION
  * A single position on the field in Meters
  *********************************************/
 class Position

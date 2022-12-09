@@ -11,7 +11,9 @@
 #include "lifespan.h"
 
 /******************************************************************************
- *
+ * WRECKAGE
+ * This class is the base for all of the wreckage that happens when an 
+ * object collides with another in the game.
  ******************************************************************************/
 class Wreckage : public SimulatorObject
 {   
@@ -21,7 +23,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * FRAGMENT
+ * This class holds the code for the fragments that emit from the parts when 
+ * they are hit by another object.
  ******************************************************************************/
 class Fragment : public Wreckage
 {
@@ -43,7 +47,8 @@ public:
 
 
 /******************************************************************************
- *
+ * GPSCENTER
+ * This holds the center of the GPS satellites for when they break off into parts.
  ******************************************************************************/
 class GPSCenter : public Wreckage
 {
@@ -62,7 +67,8 @@ public:
 
 
 /******************************************************************************
- *
+ * GPSLEFT
+ * This holds the left side of the GPS satellites for when they break off into parts.
  ******************************************************************************/
 class GPSLeft : public Wreckage
 {
@@ -82,7 +88,8 @@ public:
 
 
 /******************************************************************************
- *
+ * GPSRIGHT
+ * This holds the right side of the GPS satellites for when they break off into parts.
  ******************************************************************************/
 class GPSRight : public Wreckage
 {
@@ -101,7 +108,9 @@ public:
 
 
 /******************************************************************************
- *
+ * HUBBLETELESCOPE
+ * This is the code for the Hubble Telescope for when the Hubble Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class HubbleTelescope : public Wreckage
 {
@@ -119,7 +128,9 @@ public:
 };
 
 /******************************************************************************
- *
+ * HUBBLECOMPUTER
+ * This is the code for the Hubble Computer for when the Hubble Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class HubbleComputer : public Wreckage
 {
@@ -138,7 +149,9 @@ public:
 
 
 /******************************************************************************
- *
+ * HUBBLELEFT
+ * This is the code for the Hubble's left side for when the Hubble Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class HubbleLeft : public Wreckage
 {
@@ -155,7 +168,9 @@ public:
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);};
 
 /******************************************************************************
- *
+ * HUBBLERIGHT
+ * This is the code for the Hubble's right side for when the Hubble Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class HubbleRight : public Wreckage
 {
@@ -174,7 +189,9 @@ public:
 
 
 /******************************************************************************
- *
+ * STARLINKBODY
+ * This is the code for the body of the Starlink for when the Starlink Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class StarlinkBody : public Wreckage
 {
@@ -193,7 +210,9 @@ public:
 
 
 /******************************************************************************
- *
+ * STARLINKARRAY
+ * This is the code for the array of the Starlink for when the Starlink Satellite
+ * breaks off into parts.
  ******************************************************************************/
 class StarlinkArray : public Wreckage
 {
@@ -212,7 +231,8 @@ public:
 
 
 /******************************************************************************
- *
+ * DRAGONCENTER
+ * This holds the center of the Dragon satellite for when it breaks off into parts.
  ******************************************************************************/
 class DragonCenter : public Wreckage
 {
@@ -230,7 +250,8 @@ public:
 };
 
 /******************************************************************************
- *
+ * DRAGONLEFT
+ * This holds the left side of the Dragon satellite for when it breaks off into parts.
  ******************************************************************************/
 class DragonLeft : public Wreckage
 {
@@ -248,7 +269,8 @@ public:
 };
 
 /******************************************************************************
- *
+ * DRAGONRIGHT
+ * This holds the right side of the Dragon satellite for when it breaks off into parts.
  ******************************************************************************/
 class DragonRight : public Wreckage
 {
@@ -264,5 +286,3 @@ public:
    }
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
-
-

@@ -11,7 +11,8 @@
 #include "lifespan.h"
 
 /******************************************************************************
- *
+ * PROJECTILE
+ * This class holds the essentials for the projectiles in the game.
  ******************************************************************************/
 class Projectile: public SimulatorObject
 {

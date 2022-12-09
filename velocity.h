@@ -11,6 +11,11 @@
 #include "position.h"
 #include <iostream>
 
+/******************************************************************************
+ * VELOCITY
+ * This class calculates and returns the velocity of various objects throughout
+ * the game.
+ ******************************************************************************/
 class Velocity
 {
 private:

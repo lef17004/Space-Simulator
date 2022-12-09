@@ -7,7 +7,8 @@
 
 #pragma once
 /******************************************************************************
- *
+ * LIFESPAN
+ * This class rules the lifespans of all objects in the simulation.
  ******************************************************************************/
 class LifeSpan
 {

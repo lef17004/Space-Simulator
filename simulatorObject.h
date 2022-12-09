@@ -15,6 +15,11 @@
 #include "angle.h"
 #include "math.h"
 
+
+/******************************************************************************
+ * SIMULATOROBJECT
+ * This class sets up all of the objects in the simulation for the game.
+ ******************************************************************************/
 class SimulatorObject
 {
 protected:

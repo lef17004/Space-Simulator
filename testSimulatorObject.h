@@ -12,6 +12,11 @@
 #include "velocity.h"
 #include "earth.h"
 
+/******************************************************************************
+ * TESTSIMULATOROBJECT
+ * This is a collection of tests for the test simulation that focuses on
+ * the simulation objects throughout the game.
+ ******************************************************************************/
 class TestSimulatorObject
 {
 public:

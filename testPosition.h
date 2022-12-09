@@ -17,8 +17,8 @@
 using namespace std;
 
 /*******************************
- * TEST Position
- * A friend class for Position which contains the Position unit tests
+ * TESTPOSITION
+ * A friend class for Position which contains the Position unit tests.
  ********************************/
 class TestPosition
 {

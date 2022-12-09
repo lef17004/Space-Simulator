@@ -9,6 +9,12 @@
 #include "position.h"
 #include "uiDraw.h"
 
+
+/******************************************************************************
+ * STAR
+ * This class sets up all of the stars in the simulation as well as displays 
+ * the phases.
+ ******************************************************************************/
 class Star
 {
 private:

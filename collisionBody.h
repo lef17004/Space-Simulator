@@ -11,7 +11,8 @@
 #include "velocity.h"
 
 /******************************************************************************
- *
+ * COLLISIONBODY
+ * This class will put together all of the collisions of the game.
  ******************************************************************************/
 class CollisionBody
 {
