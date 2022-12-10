@@ -1,11 +1,23 @@
-//
-//  satellites.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *   Satellite: Base for the man-made objects that orbit earth
+ *   Also contains all the Specific Satellite Classes:
+ *       -Sputnik
+ *       -GPS
+ *       -Hubble
+ *       -Starlink
+ *       -Dragon
+ *       -DreamChaser
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    The Satellite object and all the child classes- all the man-made
+ *    ones specifically
+ ************************************************************************/
 
 #include "satellite.h"
+
+
 
 /******************************************************************************
  * Advance for Satellite.
@@ -48,7 +60,6 @@ void GPS::hit(std::list<SimulatorObject*> & simulatorCollection)
    simulatorCollection.push_back(new Fragment(position, velocity));
    simulatorCollection.push_back(new Fragment(position, velocity));
 }
-
 
 /******************************************************************************
  * HUBBLE:: HIT
@@ -101,7 +112,6 @@ void DreamChaser::applyInput(const Input & input)
    if (input.isRightPressed())
       rotationAngle.add(0.1);
    applyThrust = input.isDownPressed();
-   
 }
 
 /******************************************************************************

@@ -144,7 +144,6 @@
     <ClCompile Include="collisionBody.cpp" />
     <ClCompile Include="earth.cpp" />
     <ClCompile Include="Lab07.cpp" />
-    <ClCompile Include="lifespan.cpp" />
     <ClCompile Include="position.cpp" />
     <ClCompile Include="projectile.cpp" />
     <ClCompile Include="satellite.cpp" />

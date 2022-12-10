@@ -11,6 +11,7 @@
 #include <cassert>
 
 
+
 Position::Position(double x, double y) : x(0.0), y(0.0)
 {
    setMetersX(x);

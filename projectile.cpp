@@ -1,11 +1,16 @@
-//
-//  projectile.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Projectile: Space bullets
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all necessary information about the projectiles,
+ *    aka bullets that the Dreamchaser uses.
+ ************************************************************************/
 
 #include "projectile.h"
+
+
 
 /******************************************************************************
  * Constructor for the projectile class.

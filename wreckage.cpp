@@ -11,6 +11,8 @@
 
 #include "wreckage.h"
 
+
+
 /******************************************************************************
  * WRECKAGE
  * This class has the math for the wreckage.
@@ -47,7 +49,6 @@ void Fragment::advance(const SimulatorObject& gravitySource)
       kill();
 }
 
-
 /******************************************************************************
  * GPSCENTER
  * This class has the amount of fragments for when the GPSCenter part is hit.
@@ -71,7 +72,6 @@ void GPSLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
    simulatorCollection.push_back(new Fragment(position, velocity));
    simulatorCollection.push_back(new Fragment(position, velocity));
 }
-
 
 /******************************************************************************
  * GPSRIGHT
@@ -166,7 +166,6 @@ void DragonCenter::hit(std::list<SimulatorObject*>& simulatorCollection)
    simulatorCollection.push_back(new Fragment(position, velocity));
    simulatorCollection.push_back(new Fragment(position, velocity));
 }
-
 
 /******************************************************************************
  * DRAGONLEFT

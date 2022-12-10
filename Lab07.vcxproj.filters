@@ -39,9 +39,6 @@
     <ClCompile Include="earth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="lifespan.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

@@ -12,9 +12,11 @@
 #include <vector>
 #include "uiDraw.h"
 
+
+
 /******************************************************************************
  * ADVANCE
- * 
+ * Moves the object, using all the necessary physics
  ******************************************************************************/
 void SimulatorObject::advance(const SimulatorObject & gravitySource)
 {
@@ -45,7 +47,6 @@ void SimulatorObject::draw()
 void SimulatorObject::hit(list<SimulatorObject*> & simulatorCollection)
 {
    kill();
-  
 }
 
 /******************************************************************************
