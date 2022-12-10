@@ -1,9 +1,14 @@
-//
-//  constants.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 10/24/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Constants: Variables that don't change
+ * Author:
+ *    Michael LeFevre on 10/24/22.
+ * Summary:
+ *    The Asteroid object, specifically created upon the destruction of
+ *    earth
+ ************************************************************************/
+
+
 
 /******************************************************************************
  * CONSTANTS

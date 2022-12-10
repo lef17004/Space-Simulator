@@ -22,8 +22,9 @@ using std::max;
 
 #include <sstream>
 
-
 #define GL_SILENCE_DEPRECATION
+
+
 
 /*************************************************************************
  * GRAPHICS STREAM

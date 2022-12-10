@@ -1,9 +1,11 @@
-//
-//  testSimulatorObject.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/9/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Test Simulator Object: Units tests to test the SimulatorObject class
+ * Author:
+ *    Michael LeFevre
+ * Summary:
+ *    This class contains unit tests made to tes the SimulatorObject Class
+ ************************************************************************/
 
 #pragma once
 
@@ -11,6 +13,8 @@
 #include "position.h"
 #include "velocity.h"
 #include "earth.h"
+
+
 
 /******************************************************************************
  * TESTSIMULATOROBJECT

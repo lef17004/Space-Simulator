@@ -1,9 +1,13 @@
-//
-//  simulatorObject.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Simuator Object: Base Class for All objects
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all the necessary information that All objects 
+ *    use
+ ************************************************************************/
+
 #define _USE_MATH_DEFINES
 #pragma once
 #include "position.h"
@@ -14,6 +18,7 @@
 #include "simulatorObject.h"
 #include "angle.h"
 #include "math.h"
+
 
 
 /******************************************************************************

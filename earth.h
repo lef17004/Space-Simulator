@@ -1,9 +1,12 @@
-//
-//  earth.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Earth: Home sweet home
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    The earth Object, home sweet home and all. It rotates, isn't that 
+ *    fun?
+ ************************************************************************/
 
 #include "simulatorObject.h"
 #include "uiDraw.h"

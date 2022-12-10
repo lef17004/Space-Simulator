@@ -1,5 +1,16 @@
+/***********************************************************************
+ * Header File:
+ *    Test Collision: Units tests to test the Collision class
+ * Author:
+ *    Michael LeFevre
+ * Summary:
+ *    This class contains unit tests made to tes the CollisionBody Class
+ ************************************************************************/
+
 #pragma once
 #include "collisionBody.h"
+
+
 
 /******************************************************************************
  * TESTCOLLISIONBODY
