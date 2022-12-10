@@ -1,9 +1,12 @@
-//
-//  simulatorObject.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Simuator Object: Base Class for All objects
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all the necessary information that All objects
+ *    use
+ ************************************************************************/
 
 #include "simulatorObject.h"
 #include <vector>

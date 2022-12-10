@@ -1,9 +1,13 @@
-//
-//  Wreckage.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Wreckage: Space waste
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class is a collection of space junk created from broken
+ *    Satellites, and earth if it is destroyed. Made up of Both
+ *    Fragments and Parts
+ ************************************************************************/
 
 #include "wreckage.h"
 

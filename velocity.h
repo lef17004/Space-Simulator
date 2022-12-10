@@ -5,7 +5,7 @@
  *    Michael LeFevre on 10/24/22.
  * Summary:
  *    This class handles some of the physics of the game dealing with 
- *    
+ *    velocity.
  ************************************************************************/
 
 #pragma once

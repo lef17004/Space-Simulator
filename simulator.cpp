@@ -1,9 +1,11 @@
-//
-//  Simulator.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Simulator: Runs the simulation
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class sets up the simulator in the game.
+ ************************************************************************/
 
 #include "simulator.h"
 

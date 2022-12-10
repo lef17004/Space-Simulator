@@ -1,9 +1,12 @@
-//
-//  Velocity.cpp
-//  Lab07
-//
-//  Created by Collette Stapley on 11/10/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Velocity: Handles the velocity, aka movement of the Objects
+ * Author:
+ *    Michael LeFevre on 10/24/22.
+ * Summary:
+ *    This class handles some of the physics of the game dealing with
+ *    velocity.
+ ************************************************************************/
 
 #include "velocity.h"
 
