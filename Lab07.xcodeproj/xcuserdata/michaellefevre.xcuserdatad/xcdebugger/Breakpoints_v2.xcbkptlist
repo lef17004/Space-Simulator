@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "146"
             endingLineNumber = "146"
-            landmarkName = "test_SameSizeNoVolocityCollision()"
-            landmarkType = "7">
+            landmarkName = "TestCollisionBody"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -177,22 +177,6 @@
             startingLineNumber = "23"
             endingLineNumber = "23"
             landmarkName = "SimulatorObject::advance(gravitySource)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BF68B083-5BA1-4571-8971-CAE3CEA4CB78"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Lab07.cpp"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "124"
-            endingLineNumber = "124"
-            landmarkName = "draw()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
