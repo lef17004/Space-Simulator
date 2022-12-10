@@ -12,10 +12,10 @@
 #include "position.h"
 #include "angle.h"
 
-
-
 // Forward Declaration
 class Position;
+
+
 
 /******************************************************************************
  * ACCELERATION

@@ -1,20 +1,26 @@
-//
-//  collisionBody.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Collision Body: Handles the Game Collisions
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    Game mechanics Class, detects object collisions and handles the
+ *    consequences
+ ************************************************************************/
 
 #include "collisionBody.h"
 #include "position.h"
 #include <algorithm>
 using namespace std;
 
+
+
 /******************************************************************************
- *
+ * ISCOLLISION
+ * Detects collisions, not working very well - Not currently being used
  ******************************************************************************/
-bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
-  
+bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) 
+{  
    using std::abs;
 
    double dMax = max(abs(box1.getDx()), abs(box1.getDy()));
@@ -43,7 +49,8 @@ bool CollisionBody::isCollision(CollisionBody box1, CollisionBody box2) {
 }
 
 /******************************************************************************
- *
+ * ISCOLLISION2
+ * Detects collisions, Simplified version of IsCollision that mostly works
  ******************************************************************************/
 bool CollisionBody::isCollision2(CollisionBody obj1, CollisionBody obj2)
 {
