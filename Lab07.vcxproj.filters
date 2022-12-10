@@ -42,9 +42,6 @@
     <ClCompile Include="lifespan.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="parts.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -64,9 +61,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="angle.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="satellites.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

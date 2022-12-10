@@ -8,7 +8,8 @@
 #include "velocity.h"
 
 /******************************************************************************
- *
+ * VELOCITY::ADD
+ * Uses time of the simulation to calculate the velocity.
  ******************************************************************************/
 void Velocity::add(Acceleration acceleration)
 {
@@ -17,7 +18,8 @@ void Velocity::add(Acceleration acceleration)
 }
 
 /******************************************************************************
- *
+ * VELOCITY::ADD
+ * Uses designated time by the user to calculate the velocity.
  ******************************************************************************/
 void Velocity::add(Acceleration acceleration, double time)
 {
@@ -26,7 +28,9 @@ void Velocity::add(Acceleration acceleration, double time)
 }
 
 /******************************************************************************
- *
+ * VELOCITY::ADD
+ * Total increase of velocity, divides it along x and y axis based off of angle to
+ * get the total.
  ******************************************************************************/
 void Velocity::add(double total, Angle angle)
 {

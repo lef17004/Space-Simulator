@@ -10,7 +10,8 @@
 #include "uiDraw.h"
 
 /******************************************************************************
- *
+ * ADVANCE
+ * 
  ******************************************************************************/
 void SimulatorObject::advance(const SimulatorObject & gravitySource)
 {
@@ -26,7 +27,8 @@ void SimulatorObject::advance(const SimulatorObject & gravitySource)
 }
 
 /******************************************************************************
- *
+ * DRAW
+ * Draws the simulator object on the screen.
  ******************************************************************************/
 void SimulatorObject::draw()
 {
@@ -34,7 +36,8 @@ void SimulatorObject::draw()
 }
 
 /******************************************************************************
-  *
+  * HIT
+  * Kills the object when hit.
   ******************************************************************************/
 void SimulatorObject::hit(list<SimulatorObject*> & simulatorCollection)
 {
@@ -43,7 +46,8 @@ void SimulatorObject::hit(list<SimulatorObject*> & simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * ROTATE
+ * Rotates the object based on the rotation angle and rotation amount.
  ******************************************************************************/
 void SimulatorObject::rotate()
 {
@@ -51,13 +55,18 @@ void SimulatorObject::rotate()
 }
 
 /******************************************************************************
- *
+ * GETCOLLISIONBODY
+ * Gets the collision body and returns it.
  ******************************************************************************/
 CollisionBody SimulatorObject::getCollisionBody()
 {
    return CollisionBody(position, velocity, radius);
 }
 
+/******************************************************************************
+ * GETCOLLISIONBODY2
+ * Gets the second collision body and returns it.
+ ******************************************************************************/
 CollisionBody SimulatorObject::getCollisionBody2()
 {
    return CollisionBody(position.getPixelsX(), position.getPixelsY(), velocity.getX(), velocity.getY(), radius);

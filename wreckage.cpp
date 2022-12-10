@@ -8,7 +8,8 @@
 #include "wreckage.h"
 
 /******************************************************************************
- *
+ * WRECKAGE
+ * This class has the math for the wreckage.
  ******************************************************************************/
 Wreckage::Wreckage(const Position& position, const Velocity& velocity)
 {
@@ -30,7 +31,8 @@ Wreckage::Wreckage(const Position& position, const Velocity& velocity)
 }
 
 /******************************************************************************
- *
+ * FRAGMENT
+ * This class has the behaviors of the fragments.
  ******************************************************************************/
 void Fragment::advance(const SimulatorObject& gravitySource)
 {
@@ -43,7 +45,8 @@ void Fragment::advance(const SimulatorObject& gravitySource)
 
 
 /******************************************************************************
- *
+ * GPSCENTER
+ * This class has the amount of fragments for when the GPSCenter part is hit.
  ******************************************************************************/
 void GPSCenter::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -54,7 +57,8 @@ void GPSCenter::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * GPSLEFT
+ * This class has the amount of fragments for when the GPSLeft part is hit.
  ******************************************************************************/
 void GPSLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -66,7 +70,8 @@ void GPSLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 
 
 /******************************************************************************
- *
+ * GPSRIGHT
+ * This class has the amount of fragments for when the GPSRight part is hit.
  ******************************************************************************/
 void GPSRight::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -77,7 +82,8 @@ void GPSRight::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * HUBBLETELESCOPE
+ * This class has the amount of fragments for when the Hubble Telescope part is hit.
  ******************************************************************************/
 void HubbleTelescope::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -88,7 +94,8 @@ void HubbleTelescope::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * HUBBLECOMPUTER
+ * This class has the amount of fragments for when the Hubble Computer part is hit.
  ******************************************************************************/
 void HubbleComputer::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -98,7 +105,8 @@ void HubbleComputer::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * HUBBLELEFT
+ * This class has the amount of fragments for when the Hubble Left part is hit.
  ******************************************************************************/
 void HubbleLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -108,7 +116,8 @@ void HubbleLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * HUBBLERIGHT
+ * This class has the amount of fragments for when the Hubble Right part is hit.
  ******************************************************************************/
 void HubbleRight::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -118,7 +127,8 @@ void HubbleRight::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * STARLINKBODY
+ * This class has the amount of fragments for when the Starlink Body part is hit.
  ******************************************************************************/
 void StarlinkBody::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -129,7 +139,8 @@ void StarlinkBody::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * STARLINKARRAY
+ * This class has the amount of fragments for when the Starlink Array part is hit.
  ******************************************************************************/
 void StarlinkArray::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -140,7 +151,8 @@ void StarlinkArray::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * DRAGONCENTER
+ * This class has the amount of fragements for when the Dragon Center part is hit.
  ******************************************************************************/
 void DragonCenter::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -153,7 +165,8 @@ void DragonCenter::hit(std::list<SimulatorObject*>& simulatorCollection)
 
 
 /******************************************************************************
- *
+ * DRAGONLEFT
+ * This class has the amount of fragements for when the Dragon Left part is hit.
  ******************************************************************************/
 void DragonLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 {
@@ -163,7 +176,8 @@ void DragonLeft::hit(std::list<SimulatorObject*>& simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * DRAGONRIGHT
+ * This class has the amount of fragements for when the Dragon Right part is hit.
  ******************************************************************************/
 void DragonRight::hit(std::list<SimulatorObject*>& simulatorCollection)
 {

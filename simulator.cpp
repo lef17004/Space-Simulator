@@ -8,7 +8,8 @@
 #include "simulator.h"
 
 /******************************************************************************
- *
+ * SIMULATOR
+ * Puts all of the objects in the simulator.
  ******************************************************************************/
 Simulator::Simulator()
 {
@@ -32,7 +33,8 @@ Simulator::Simulator()
 }
 
 /******************************************************************************
- *
+ * SIMULATEFRAME
+ * This simulates the frame of the simulator.
  ******************************************************************************/
 void Simulator::simulateFrame(const Input & input)
 {
@@ -43,7 +45,8 @@ void Simulator::simulateFrame(const Input & input)
 }
 
 /******************************************************************************
- *
+ * ADVANCE
+ * Advances the simulation for the Earth and Star objects.
  ******************************************************************************/
 void Simulator::advance()
 {
@@ -56,7 +59,8 @@ void Simulator::advance()
 }
 
 /******************************************************************************
- *
+ * DRAW
+ * Draws the Star objects.
  ******************************************************************************/
 void Simulator::draw()
 {
@@ -69,7 +73,8 @@ void Simulator::draw()
 
 
 /******************************************************************************
- *
+ * HANDLEINPUT
+ * Handles input from the client for the simulation.
  ******************************************************************************/
 void Simulator::handleInput(const Input & input)
 {
@@ -82,7 +87,8 @@ void Simulator::handleInput(const Input & input)
 
 
 /******************************************************************************
- *
+ * HANDLECOLLISIONS
+ * This handles the collisions for the simulation.
  ******************************************************************************/
 void Simulator::handleCollisions()
 {

@@ -14,7 +14,7 @@
 #include "testSatellite.h"
 
 /*****************************************************************
- * TEST RUNNER
+ * TESTRUNNER
  * Runs all the unit tests
  ****************************************************************/
 void testRunner()
