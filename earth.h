@@ -14,6 +14,8 @@
 #include "asteriod.h"
 #pragma once
 
+
+
 /******************************************************************************
  * EARTH
  * This class draws Earth and rotates it on screen.
@@ -46,5 +48,4 @@ public:
    {
       return CollisionBody(position.getPixelsX(), position.getPixelsY(), velocity.getX(), velocity.getY(), 50.0);
    }
-
 };

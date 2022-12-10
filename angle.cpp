@@ -1,11 +1,15 @@
-//
-//  angle.cpp
-//  Lab03
-//
-//  Created by Michael LeFevre on 5/21/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Angle: Represents an Angle
+ * Author:
+ *    Michael LeFevre 5/21/22
+ * Summary:
+ *    An angle
+ ************************************************************************/
 
 #include "angle.h"
+
+
 
 /******************************************************************************
  * NORMALIZE
@@ -28,7 +32,6 @@ void Angle::add(double amount)
    value += amount;
    setRadians(value);
 }
-
 
 /******************************************************************************
  * SET DEGREES

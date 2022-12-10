@@ -1,15 +1,21 @@
-//
-//  acceleration.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 10/24/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Acceleration: Calculates the acceleration
+ * Author:
+ *    Michael LeFevre on 10/24/22.
+ * Summary:
+ *    Calculates the acceleration throughout the game for all the objects
+ *    in play
+ ************************************************************************/
 
 #include "position.h"
 #include "angle.h"
 
+
+
 /******************************************************************************
- *
+ * ACCELERATION
+ * Class constructor that takes total, radians and reverse inputs
  ******************************************************************************/
 Acceleration::Acceleration(double total, double radians, bool reverse)
 {
@@ -21,7 +27,8 @@ Acceleration::Acceleration(double total, double radians, bool reverse)
 }
 
 /******************************************************************************
- *
+ * ACCELERATION
+ * Class constructor that takes total and angle as inputs
  ******************************************************************************/
 Acceleration::Acceleration(double total, const Angle & angle)
 {
@@ -30,7 +37,8 @@ Acceleration::Acceleration(double total, const Angle & angle)
 }
 
 /******************************************************************************
- *
+ * REVERSE
+ * Reverses the acceleration
  ******************************************************************************/
 void Acceleration::reverse()
 {

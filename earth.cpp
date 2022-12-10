@@ -1,14 +1,20 @@
-//
-//  earth.cpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Source File:
+ *    Earth: Home sweet home
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    The earth Object, home sweet home and all. It rotates, isn't that
+ *    fun?
+ ************************************************************************/
 
 #include "earth.h"
 
+
+
 /******************************************************************************
- *
+ * EARTH
+ * This class draws Earth and rotates it on screen.
  ******************************************************************************/
 Earth::Earth()
 {
@@ -20,7 +26,8 @@ Earth::Earth()
 }
 
 /******************************************************************************
- *
+ * HIT
+ * Detects when Objects hit the Earth, keeps track of Earth lifespan
  ******************************************************************************/
 void Earth::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -36,6 +43,5 @@ void Earth::hit(std::list<SimulatorObject*> & simulatorCollection)
    {
       for (int i = 0; i < 60; i++)
          simulatorCollection.push_back(new Asteroid(position, velocity));
-   }
-   
-   }
+   }   
+}
