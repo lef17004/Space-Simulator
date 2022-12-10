@@ -14,7 +14,7 @@
 void Satellite::advance(const SimulatorObject & gravitySource)
 {
    SimulatorObject::advance(gravitySource);
-   if (random(1, 3000) == 50)
+   if (random(1, 9000) == 50)
    {
       rotationAmount = 0.15;
       velocity.setX(velocity.getX() + 50);
