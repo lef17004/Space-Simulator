@@ -34,13 +34,13 @@ using namespace std;
 
 
 /*************************************************************************
- * Demo
- * Test structure to capture the LM that will move around the screen
+ * Simulation
+ * Class that will be past as a void pointer for OPENGL.
  *************************************************************************/
-class Demo
+class Simulation
 {
 public:
-   Demo(Position ptUpperRight) :
+   Simulation(Position ptUpperRight) :
       ptUpperRight(ptUpperRight)
    {
    }
@@ -60,7 +60,7 @@ void callBack(const Interface* pUI, void* p)
 {
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
-   Demo* pDemo = (Demo*)p;
+   Simulation* pSimulation = (Simulation*)p;
    Input input;
    input.setUpPressed(pUI->isUp());
    input.setDownPressed(pUI->isDown());
@@ -68,7 +68,7 @@ void callBack(const Interface* pUI, void* p)
    input.setRightPressed(pUI->isRight());
    input.setSpacePressed(pUI->isSpace());
    
-   pDemo->simulator.simulateFrame(input);
+   pSimulation->simulator.simulateFrame(input);
 }
 
 double Position::metersFromPixels = 40.0;
@@ -96,9 +96,10 @@ int main(int argc, char** argv)
       "Demo",   /* name on the window */
       ptUpperRight);
 
+   // Run the Tests!
    testRunner();
    // Initialize the demo
-   Demo demo(ptUpperRight);
+   Simulation demo(ptUpperRight);
    
    // set everything into action
    ui.run(callBack, &demo);
