@@ -65,8 +65,8 @@ public:
    double getZoom() const { return metersFromPixels; }
    
    
-   void add(Velocity velocity);
-   void add(Velocity velocity, Acceleration acceletation);
+   void add(const Velocity & velocity);
+   void add(const Velocity & velocity, const Acceleration & acceletation);
    
    
    

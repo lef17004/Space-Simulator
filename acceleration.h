@@ -28,7 +28,7 @@ public:
    Acceleration(double total, const Angle & angle);
    Acceleration(double total, double radians, bool reverse = false);
    
-   double getX() { return ddx; }
-   double getY() { return ddy; }
+   double getX() const { return ddx; }
+   double getY() const { return ddy; }
    void reverse();
 };

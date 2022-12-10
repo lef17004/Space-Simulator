@@ -54,14 +54,21 @@ std::istream& operator >> (std::istream& in, Position& pt)
    return in;
 }
 
-
-void Position::add(Velocity velocity)
+/******************************************************************************
+ * POSITION::ADD
+ * Calculates the new x and y after applying velocity.
+ ******************************************************************************/
+void Position::add(const Velocity & velocity)
 {
    setMetersX(getMetersX() + velocity.getX() * TIME);
    setMetersY(getMetersY() + velocity.getY() * TIME);
 }
 
-void Position::add(Velocity velocity, Acceleration acceleration)
+/******************************************************************************
+ * * POSITION::ADD
+ * Calculates the new x and y after applying velocity and acceleration.
+ ******************************************************************************/
+void Position::add(const Velocity & velocity, const Acceleration & acceleration)
 {
    setMetersX(getMetersX() + (velocity.getX() * TIME) + (0.5 * acceleration.getX() * TIME * TIME));
    setMetersY(getMetersY() + (velocity.getY() * TIME) + (0.5 * acceleration.getY() * TIME * TIME));
