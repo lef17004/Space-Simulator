@@ -1,14 +1,19 @@
-//
-//  projectile.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Projectile: Space bullets
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all necessary information about the projectiles,
+ *    aka bullets that the Dreamchaser uses.
+ ************************************************************************/
 
 #pragma once
 #include "simulatorObject.h"
 #include "uiDraw.h"
 #include "lifespan.h"
+
+
 
 /******************************************************************************
  * PROJECTILE

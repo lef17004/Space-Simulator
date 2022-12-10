@@ -1,13 +1,18 @@
-//
-//  acceleration.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 10/24/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Acceleration: Calculates the acceleration
+ * Author:
+ *    Michael LeFevre on 10/24/22.
+ * Summary:
+ *    Calculates the acceleration throughout the game for all the objects
+ *    in play
+ ************************************************************************/
 
 #pragma once
 #include "position.h"
 #include "angle.h"
+
+
 
 // Forward Declaration
 class Position;
@@ -28,7 +33,7 @@ public:
    Acceleration(double total, const Angle & angle);
    Acceleration(double total, double radians, bool reverse = false);
    
-   double getX() { return ddx; }
-   double getY() { return ddy; }
+   double getX() const { return ddx; }
+   double getY() const { return ddy; }
    void reverse();
 };

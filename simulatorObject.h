@@ -1,9 +1,13 @@
-//
-//  simulatorObject.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Simuator Object: Base Class for All objects
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all the necessary information that All objects 
+ *    use
+ ************************************************************************/
+
 #define _USE_MATH_DEFINES
 #pragma once
 #include "position.h"
@@ -14,6 +18,7 @@
 #include "simulatorObject.h"
 #include "angle.h"
 #include "math.h"
+
 
 
 /******************************************************************************
@@ -30,6 +35,19 @@ protected:
    bool alive;
    double rotationAmount = 0.01;
    
+   void setAlive(bool isAlive) { alive = isAlive; }
+   void setRotation(const Angle & rotation) { this->rotationAngle = rotation; }
+   void setDy(double dy) { velocity.setY(dy); }
+   void setDx(double dx) { velocity.setX(dx); }
+   void setVelocity(const Velocity & velocity) { this->velocity = velocity; }
+   void setY(double y) { position.setMetersY(y); }
+   void setX(double x) { position.setMetersX(x); }
+   
+   void setRadius(int radius) { this->radius = radius; }
+   void setPosition(Position position) { this->position = position; }
+   
+   
+
    
 public:
    SimulatorObject(): position(Position()),
@@ -59,7 +77,7 @@ radius(radius), alive(true) {}
       this->alive = rhs.alive;
       return *this;
    }
-   //Velocity & operator = (Velocity & rhs)
+
    
    virtual void advance(const SimulatorObject & gravitySource);
    virtual void draw();
@@ -69,29 +87,17 @@ radius(radius), alive(true) {}
    virtual CollisionBody getCollisionBody2();
    
    int getRadius() const { return radius; }
-   void setRadius(int radius) { this->radius = radius; }
-   
    Position getPosition() { return position; }
-   void setPosition(Position position) { this->position = position; }
-   
    double getX() const { return position.getMetersX(); }
-   void setX(double x) { position.setMetersX(x); }
    double getY() const {return position.getMetersY(); }
-   void setY(double y) { position.setMetersY(y); }
    Velocity& getVelocity()  { return velocity; }
-   void setVelocity(const Velocity & velocity) { this->velocity = velocity; }
    double getDx() const { return velocity.getX(); }
-   void setDx(double dx) { velocity.setX(dx); }
    double getDy() const { return velocity.getY(); }
-   void setDy(double dy) { velocity.setY(dy); }
    Angle getRotation() const { return rotationAngle; }
-   void setRotation(const Angle & rotation) { this->rotationAngle = rotation; }
    bool isAlive() const { return alive; }
-   void setAlive(bool isAlive) { alive = isAlive; }
    double getHeight() const { return sqrt((getX() * getX()) + (getY() * getY())); }
    
    void kill() { alive = false; }
 
    friend class TestSimulatorObject;
-   friend class TestSatellite;
 };

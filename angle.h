@@ -57,5 +57,4 @@ private:
    
    // Wraps a value around the range [0, 2PI)
    double normalize(double value);
-   
 };

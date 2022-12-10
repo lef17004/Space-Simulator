@@ -14,7 +14,6 @@
 		33332905291B1A2C006814A9 /* wreckage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33332903291B1A2C006814A9 /* wreckage.cpp */; };
 		33332907291B1A63006814A9 /* projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33332906291B1A63006814A9 /* projectile.cpp */; };
 		3333290B291B1AB9006814A9 /* earth.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33332909291B1AB9006814A9 /* earth.cpp */; };
-		33332911291B1B11006814A9 /* lifespan.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3333290F291B1B11006814A9 /* lifespan.cpp */; };
 		3378392E2925AE5E000BCB9F /* angle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3378392D2925AE5E000BCB9F /* angle.cpp */; };
 		33AD94E2291D99E600147D70 /* velocity.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33AD94E1291D99E600147D70 /* velocity.cpp */; };
 		33DCC6DA29088076000D6FD5 /* acceleration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 33DCC6D729087EFB000D6FD5 /* acceleration.cpp */; };
@@ -56,13 +55,11 @@
 		33332908291B1A7E006814A9 /* projectile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = projectile.h; sourceTree = "<group>"; };
 		33332909291B1AB9006814A9 /* earth.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = earth.cpp; sourceTree = "<group>"; };
 		3333290A291B1AB9006814A9 /* earth.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = earth.h; sourceTree = "<group>"; };
-		3333290F291B1B11006814A9 /* lifespan.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = lifespan.cpp; sourceTree = "<group>"; };
 		33332910291B1B11006814A9 /* lifespan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = lifespan.h; sourceTree = "<group>"; };
 		33332915291C900A006814A9 /* testSimulatorObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSimulatorObject.h; sourceTree = "<group>"; };
 		3360CA24293BF1DD00CFBA44 /* asteriod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = asteriod.h; sourceTree = "<group>"; };
 		3378392C2925AE42000BCB9F /* angle.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = angle.h; sourceTree = "<group>"; };
 		3378392D2925AE5E000BCB9F /* angle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = angle.cpp; sourceTree = "<group>"; };
-		33AAA2A6291DF94500CEAFF5 /* testSatellite.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = testSatellite.h; sourceTree = "<group>"; };
 		33AD94E0291D99E600147D70 /* testCollisionBody.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = testCollisionBody.h; sourceTree = "<group>"; };
 		33AD94E1291D99E600147D70 /* velocity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = velocity.cpp; sourceTree = "<group>"; };
 		33DCC6D629087EFB000D6FD5 /* acceleration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = acceleration.h; sourceTree = "<group>"; };
@@ -128,7 +125,6 @@
 				33DCC6D729087EFB000D6FD5 /* acceleration.cpp */,
 				333328FD291B1994006814A9 /* collisionBody.cpp */,
 				33332909291B1AB9006814A9 /* earth.cpp */,
-				3333290F291B1B11006814A9 /* lifespan.cpp */,
 				C179C6C027E375AF00E3E514 /* position.cpp */,
 				33332906291B1A63006814A9 /* projectile.cpp */,
 				33332900291B19DB006814A9 /* satellite.cpp */,
@@ -159,7 +155,6 @@
 				C11C7EAF25780B6500EA4B2E /* testPosition.h */,
 				33332915291C900A006814A9 /* testSimulatorObject.h */,
 				33AD94E0291D99E600147D70 /* testCollisionBody.h */,
-				33AAA2A6291DF94500CEAFF5 /* testSatellite.h */,
 			);
 			name = Tests;
 			sourceTree = "<group>";
@@ -256,7 +251,6 @@
 				C11C7EB525780B6500EA4B2E /* uiDraw.cpp in Sources */,
 				33332907291B1A63006814A9 /* projectile.cpp in Sources */,
 				333328FC291B1922006814A9 /* simulatorObject.cpp in Sources */,
-				33332911291B1B11006814A9 /* lifespan.cpp in Sources */,
 				C11C7EB125780B6500EA4B2E /* Lab07.cpp in Sources */,
 				3378392E2925AE5E000BCB9F /* angle.cpp in Sources */,
 				C11C7EB225780B6500EA4B2E /* test.cpp in Sources */,

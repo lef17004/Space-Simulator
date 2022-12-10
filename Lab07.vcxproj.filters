@@ -98,9 +98,6 @@
     <ClInclude Include="lifespan.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="parts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="projectile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -126,6 +123,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stars.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="asteriod.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

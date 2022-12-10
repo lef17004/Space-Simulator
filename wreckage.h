@@ -1,14 +1,20 @@
-//
-//  Wreckage.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Wreckage: Space waste
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class is a collection of space junk created from broken
+ *    Satellites, and earth if it is destroyed. Made up of Both
+ *    Fragments and Parts
+ ************************************************************************/
 
 #pragma once
 #include "simulatorObject.h"
 #include "uiDraw.h"
 #include "lifespan.h"
+
+
 
 /******************************************************************************
  * WRECKAGE
@@ -45,7 +51,6 @@ public:
    void advance(const SimulatorObject& gravitySource);
 };
 
-
 /******************************************************************************
  * GPSCENTER
  * This holds the center of the GPS satellites for when they break off into parts.
@@ -64,7 +69,6 @@ public:
    }
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
-
 
 /******************************************************************************
  * GPSLEFT
@@ -86,7 +90,6 @@ public:
 
 };
 
-
 /******************************************************************************
  * GPSRIGHT
  * This holds the right side of the GPS satellites for when they break off into parts.
@@ -105,7 +108,6 @@ public:
    }
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
-
 
 /******************************************************************************
  * HUBBLETELESCOPE
@@ -147,7 +149,6 @@ public:
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
-
 /******************************************************************************
  * HUBBLELEFT
  * This is the code for the Hubble's left side for when the Hubble Satellite
@@ -187,7 +188,6 @@ public:
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
-
 /******************************************************************************
  * STARLINKBODY
  * This is the code for the body of the Starlink for when the Starlink Satellite
@@ -208,7 +208,6 @@ public:
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
 
-
 /******************************************************************************
  * STARLINKARRAY
  * This is the code for the array of the Starlink for when the Starlink Satellite
@@ -228,7 +227,6 @@ public:
    }
    virtual void hit(std::list<SimulatorObject*>& simulatorCollection);
 };
-
 
 /******************************************************************************
  * DRAGONCENTER

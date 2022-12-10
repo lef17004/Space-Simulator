@@ -8,7 +8,8 @@
 #include "projectile.h"
 
 /******************************************************************************
- *
+ * Constructor for the projectile class.
+ * Gives a boost of 9000 m/s to the projectile's velocity.
  ******************************************************************************/
 Projectile::Projectile(const Position & position, const Velocity & velocity, const Angle & angle)
 {
@@ -19,7 +20,7 @@ Projectile::Projectile(const Position & position, const Velocity & velocity, con
 }
 
 /******************************************************************************
- *
+ * Adances the projectile forward 1 frame.
  ******************************************************************************/
 void Projectile::advance(const SimulatorObject & gravitySource)
 {

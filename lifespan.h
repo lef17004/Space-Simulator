@@ -1,11 +1,16 @@
-//
-//  lifespan.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Lifespan: Life of all objects
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    Every object in the game has a life, this is where that is controlled
+ ************************************************************************/
 
 #pragma once
+
+
+
 /******************************************************************************
  * LIFESPAN
  * This class rules the lifespans of all objects in the simulation.

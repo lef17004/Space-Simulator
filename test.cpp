@@ -11,7 +11,6 @@
 #include "testPosition.h"
 #include "testSimulatorObject.h"
 #include "testCollisionBody.h"
-#include "testSatellite.h"
 
 /*****************************************************************
  * TESTRUNNER
@@ -20,7 +19,7 @@
 void testRunner()
 {
 //   TestPosition().run();
-  // TestSimulatorObject().run();
-   TestCollisionBody().run();
-//   TestSatellite().run();
+//   TestSimulatorObject().run();
+//   TestCollisionBody().run();
+
 }

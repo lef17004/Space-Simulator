@@ -31,126 +31,21 @@ using namespace std;
 
 
 
-class SatelliteO
-{
-private:
-   Velocity velocity;
-   Position position;
-   double rotation;
-   double angle;
-
-public:
-   
-   SatelliteO()
-   {
-      position = Position(21082000, 36515095);
-      velocity = Velocity(-2685.0, 1550.0);
-   }
-   
-   void advance()
-   {
-      double angle = atan2(0 - position.getMetersX(), 0 - position.getMetersY());
-      double heightAboveEarth = position.getTotalMeters() - EARTH_RADIUS;
-      double innerEquation = EARTH_RADIUS / (EARTH_RADIUS + heightAboveEarth);
-      double gravity = GRAVITY_SEA_LEVEL * innerEquation * innerEquation;
-
-      Acceleration accel(gravity, angle, false);
-      velocity.add(accel);
-      position.add(velocity, accel);
-   }
-   
-   Position getPosition()
-   {
-      return position;
-   }
-};
-
-class SatelliteTest
-{
-private:
-   double x;
-   double y;
-   double dx;
-   double dy;
-   
-public:
-   SatelliteTest()
-   {
-     
-      x = 0.0;
-      y = 8000000.0;
-      dx = -7900.0;
-      dy = 0.0;
-   }
-   
-   SatelliteTest(double x, double y, double dx, double dy): x(x), y(y), dx(dx), dy(dy)
-   {
-   
-   }
-   
-   void advance()
-   {
-      double time = 48.0;
-      double earthRadius = 6378000.0;
-      double gravityAtSeaLevel = -9.80665;
-      
-      double angle = atan2(0 - x, 0 - y);
-      double heightAboveEarth = sqrt(x * x + y * y) - earthRadius;
-      
-      double gravityAccel = gravityAtSeaLevel * (earthRadius / (earthRadius + heightAboveEarth )) * (earthRadius / (earthRadius + heightAboveEarth ));
-      
-      double ddx = -gravityAccel * sin(angle);
-      double ddy = -gravityAccel * cos(angle);
-      
-      
-      double newDx = dx + ddx * time;
-      double newDy = dy + ddy * time;
-      
-      double newX = x + newDx * time + 0.5 * ddx * time * time;
-      double newY = y + newDy * time + 0.5 * ddy * time * time;
-      
-      newX = x + newDx * time;
-      newY = y + newDy * time;
-      
-      dx = newDx;
-      dy = newDy;
-      x = newX;
-      y = newY;
-      
-   }
-   
-   void draw()
-   {
-      //drawHubble(Position(x, y), 0);
-   }
-    
-};
 
 
 /*************************************************************************
- * Demo
- * Test structure to capture the LM that will move around the screen
+ * Simulation
+ * Class that will be past as a void pointer for OPENGL.
  *************************************************************************/
-class Demo
+class Simulation
 {
 public:
-   Demo(Position ptUpperRight) :
+   Simulation(Position ptUpperRight) :
       ptUpperRight(ptUpperRight)
    {
-
-     sim = SimulatorObject(Position(21082000, 36515095), Velocity(-2685.0, 1550.0), 5);
-      angleEarth = 0.0;
    }
 
    Position ptUpperRight;
-   SatelliteO sat;
-   //SimulatorObject sim(Position(), Velocity(), 5);
-   SimulatorObject sim;
-   Sputnik spud;
-   
-   Earth earth;
-   double angleEarth;
-   SatelliteTest test;
    Simulator simulator;
 };
 
@@ -165,7 +60,7 @@ void callBack(const Interface* pUI, void* p)
 {
    // the first step is to cast the void pointer into a game object. This
    // is the first step of every single callback function in OpenGL. 
-   Demo* pDemo = (Demo*)p;
+   Simulation* pSimulation = (Simulation*)p;
    Input input;
    input.setUpPressed(pUI->isUp());
    input.setDownPressed(pUI->isDown());
@@ -173,7 +68,7 @@ void callBack(const Interface* pUI, void* p)
    input.setRightPressed(pUI->isRight());
    input.setSpacePressed(pUI->isSpace());
    
-   pDemo->simulator.simulateFrame(input);
+   pSimulation->simulator.simulateFrame(input);
 }
 
 double Position::metersFromPixels = 40.0;
@@ -201,9 +96,10 @@ int main(int argc, char** argv)
       "Demo",   /* name on the window */
       ptUpperRight);
 
+   // Run the Tests!
    testRunner();
    // Initialize the demo
-   Demo demo(ptUpperRight);
+   Simulation demo(ptUpperRight);
    
    // set everything into action
    ui.run(callBack, &demo);

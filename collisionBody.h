@@ -1,14 +1,19 @@
-//
-//  collisionBody.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Collision Body: Handles the Game Collisions
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    Game mechanics Class, detects object collisions and handles the 
+ *    consequences
+ ************************************************************************/
 
 #pragma once
 
 #include "position.h"
 #include "velocity.h"
+
+
 
 /******************************************************************************
  * COLLISIONBODY

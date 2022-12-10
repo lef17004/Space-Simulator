@@ -1,9 +1,11 @@
-//
-//  testSimulatorObject.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/9/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Test Simulator Object: Units tests to test the SimulatorObject class
+ * Author:
+ *    Michael LeFevre
+ * Summary:
+ *    This class contains unit tests made to tes the SimulatorObject Class
+ ************************************************************************/
 
 #pragma once
 
@@ -11,6 +13,8 @@
 #include "position.h"
 #include "velocity.h"
 #include "earth.h"
+
+
 
 /******************************************************************************
  * TESTSIMULATOROBJECT
@@ -27,7 +31,7 @@ public:
       test_advanceFrameOne();
       test_advanceFrameTwo();
       test_advanceFrameThree();
-      //test_hitNoWreckage();
+      test_hitNoWreckage();
       test_getCollisionBody();
       test_getRadius();
       test_setRadius();
@@ -100,22 +104,22 @@ public:
       satellite.setDy(0);
       satellite.radius = 10;
       satellite.alive = true;
-
+      
       Earth earth;
       earth.setX(0);
       earth.setY(0);
-
+      
       // Exercise
       satellite.advance(earth);
-
+      
       // Verify
       assert(closeEnough(satellite.getX(), 148800.0, 0.001));
-      assert(closeEnough(satellite.getY(), 42163224.504, 0.001));
+      assert(closeEnough(satellite.getY(), 42163483.002, 0.001));
       assert(3100 == satellite.getDx());
       assert(closeEnough(satellite.getDy(), -10.771, 0.001));
       assert(10 == satellite.radius);
       assert(true == satellite.isAlive());
-
+      
       // Teardown
    }
    
@@ -130,19 +134,19 @@ public:
       satellite.setDy(0);
       satellite.radius = 10;
       satellite.alive = true;
-
+      
       Earth earth;
       earth.setX(0);
       earth.setY(0);
       
       satellite.advance(earth);
-
+      
       // Exercise
       satellite.advance(earth);
-
+      
       // Verify
-      assert(closeEnough(satellite.getX(), 297597.263, 0.001));
-      assert(closeEnough(satellite.getY(), 42161931.9953, 0.001));
+      assert(closeEnough(satellite.getX(), 297598.175, 0.001));
+      assert(closeEnough(satellite.getY(), 42162449.004, 0.001));
       assert(closeEnough(satellite.getDx(), 3099.962, 0.001));
       assert(closeEnough(satellite.getDy(), -21.542, 0.001));
       assert(10 == satellite.radius);
@@ -163,20 +167,20 @@ public:
       satellite.setDy(0);
       satellite.radius = 10;
       satellite.alive = true;
-
+      
       Earth earth;
       earth.setX(0);
       earth.setY(0);
-
+      
       satellite.advance(earth);
       satellite.advance(earth);
-
+      
       // Exercise
       satellite.advance(earth);
-
+      
       // Verify
-      assert(closeEnough(satellite.getX(), 446389.964, 0.001));
-      assert(closeEnough(satellite.getY(), 42160122.476, 0.001));
+      assert(closeEnough(satellite.getX(), 446392.701, 0.001));
+      assert(closeEnough(satellite.getY(), 42160898.008, 0.001));
       assert(closeEnough(satellite.getDx(), 3099.886, 0.001));
       assert(closeEnough(satellite.getDy(), -32.313, 0.001));
       assert(10 == satellite.radius);
@@ -184,37 +188,40 @@ public:
       // Teardown
    }
    
-   // Test hit with no wreckage
-//   void test_hitNoWreckage()
-//   {
-//      // Setup
-//      Position pos;
-//      pos.setMetersX(4);
-//      pos.setMetersY(3);
-//
-//      Velocity vel;
-//      vel.setX(5);
-//      vel.setY(5);
-//
-//      SimulatorObject obj;
-//      obj.position = pos;
-//      obj.velocity = vel;
-//      obj.radius = 5;
-//      obj.alive = true;
-//
-//      // Exercise
-//      auto wreckageCollection = obj.hit();
-//
-//      // Verify
-//      assert(0 == wreckageCollection.size());
-//      assert(4 == obj.position.getMetersX());
-//      assert(3 == obj.position.getMetersY());
-//      assert(5 == obj.velocity.getX());
-//      assert(5 == obj.velocity.getY());
-//      assert(5 == obj.radius);
-//      assert(false == obj.isAlive());
-//      // Teardown
-//   }
+   //Test hit with no wreckage
+   void test_hitNoWreckage()
+   {
+      // Setup
+      Position pos;
+      pos.setMetersX(4);
+      pos.setMetersY(3);
+      
+      Velocity vel;
+      vel.setX(5);
+      vel.setY(5);
+      
+      SimulatorObject obj;
+      obj.position = pos;
+      obj.velocity = vel;
+      obj.radius = 5;
+      obj.alive = true;
+      
+      std::list<SimulatorObject *> list;
+      
+      
+      // Exercise
+      obj.hit(list);
+      
+      // Verify
+      assert(0 == list.size());
+      assert(4 == obj.position.getMetersX());
+      assert(3 == obj.position.getMetersY());
+      assert(5 == obj.velocity.getX());
+      assert(5 == obj.velocity.getY());
+      assert(5 == obj.radius);
+      assert(false == obj.isAlive());
+      // Teardown
+   }
    
    
    // Test creating a collision body
@@ -227,10 +234,10 @@ public:
       satellite.setDx(3100);
       satellite.setDy(0);
       satellite.radius = 5;
-
+      
       // Exercise
       CollisionBody body = satellite.getCollisionBody();
-
+      
       // Verify
       assert(0 == body.getX());
       assert(42164000 == body.getY());

@@ -7,7 +7,6 @@
  *    All the unit tests for Position
  ************************************************************************/
 
-
 #pragma once
 
 #include <iostream>
@@ -15,6 +14,8 @@
 #include <cassert>
 
 using namespace std;
+
+
 
 /*******************************
  * TESTPOSITION
