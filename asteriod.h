@@ -1,15 +1,21 @@
-//
-//  asteriod.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 12/3/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Asteroid: Space Rock
+ * Author:
+ *    Michael LeFevre on 12/3/22.
+ * Summary:
+ *    The Asteroid object, specifically created upon the destruction of
+ *    earth
+ ************************************************************************/
 
 #pragma once
 #include "wreckage.h"
 
+
+
 /******************************************************************************
- *
+ * ASTEROID
+ * This class represents the asteroid object
  ******************************************************************************/
 class Asteroid: public Wreckage
 {
@@ -26,5 +32,4 @@ public:
    {
       SimulatorObject::hit(simulatorCollection);
    }
-   
 };

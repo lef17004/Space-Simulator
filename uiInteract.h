@@ -23,6 +23,8 @@ using std::max;
 
 #define GL_SILENCE_DEPRECATION
 
+
+
 /********************************************
  * INTERFACE
  * All the data necessary to keep our graphics
@@ -89,8 +91,6 @@ private:
    static int  isRightPress;         //    "   right      "
    static bool isSpacePress;         //    "   space      "
 };
-
-
 
 /************************************************************************
  * DRAW CALLBACK

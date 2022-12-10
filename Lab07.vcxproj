@@ -145,11 +145,9 @@
     <ClCompile Include="earth.cpp" />
     <ClCompile Include="Lab07.cpp" />
     <ClCompile Include="lifespan.cpp" />
-    <ClCompile Include="parts.cpp" />
     <ClCompile Include="position.cpp" />
     <ClCompile Include="projectile.cpp" />
     <ClCompile Include="satellite.cpp" />
-    <ClCompile Include="satellites.cpp" />
     <ClCompile Include="simulator.cpp" />
     <ClCompile Include="simulatorObject.cpp" />
     <ClCompile Include="test.cpp" />
@@ -161,11 +159,11 @@
   <ItemGroup>
     <ClInclude Include="acceleration.h" />
     <ClInclude Include="angle.h" />
+    <ClInclude Include="asteriod.h" />
     <ClInclude Include="collisionBody.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="earth.h" />
     <ClInclude Include="lifespan.h" />
-    <ClInclude Include="parts.h" />
     <ClInclude Include="position.h" />
     <ClInclude Include="projectile.h" />
     <ClInclude Include="satellite.h" />

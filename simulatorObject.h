@@ -1,9 +1,13 @@
-//
-//  simulatorObject.hpp
-//  Lab07
-//
-//  Created by Michael LeFevre on 11/8/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Simuator Object: Base Class for All objects
+ * Author:
+ *    Michael LeFevre on 11/8/22.
+ * Summary:
+ *    This class holds all the necessary information that All objects 
+ *    use
+ ************************************************************************/
+
 #define _USE_MATH_DEFINES
 #pragma once
 #include "position.h"
@@ -14,6 +18,7 @@
 #include "simulatorObject.h"
 #include "angle.h"
 #include "math.h"
+
 
 
 /******************************************************************************
@@ -30,18 +35,14 @@ protected:
    bool alive;
    double rotationAmount = 0.01;
    
-   
 public:
    SimulatorObject(): position(Position()),
                       velocity(Velocity()),
                       radius(0),
-                      alive(true)
-   {
+                      alive(true) {}
 
-      
-   }
    SimulatorObject(Position position, Velocity velocity, int radius): position(position), velocity(velocity),
-radius(radius), alive(true) {}
+                  radius(radius), alive(true) {}
    
    SimulatorObject(const SimulatorObject & rhs)
    {
@@ -59,6 +60,7 @@ radius(radius), alive(true) {}
       this->alive = rhs.alive;
       return *this;
    }
+
    //Velocity & operator = (Velocity & rhs)
    
    virtual void advance(const SimulatorObject & gravitySource);

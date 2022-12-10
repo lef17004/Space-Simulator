@@ -1,15 +1,20 @@
-//
-//  velocity.h
-//  Lab07
-//
-//  Created by Michael LeFevre on 10/24/22.
-//
+/***********************************************************************
+ * Header File:
+ *    Velocity: Handles the velocity, aka movement of the Objects
+ * Author:
+ *    Michael LeFevre on 10/24/22.
+ * Summary:
+ *    This class handles some of the physics of the game dealing with 
+ *    
+ ************************************************************************/
 
 #pragma once
 #include "acceleration.h"
 #include "constants.h"
 #include "position.h"
 #include <iostream>
+
+
 
 /******************************************************************************
  * VELOCITY
@@ -21,7 +26,6 @@ class Velocity
 private:
    double dx;
    double dy;
-   
    
 public:
    Velocity(): dx(0), dy(0) {}
