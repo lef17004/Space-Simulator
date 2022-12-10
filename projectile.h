@@ -22,7 +22,7 @@ public:
    Projectile(const Position & position, const Velocity & velocity, const Angle & angle);
    Projectile() {}
    
-   void draw()
+   void draw() const
    {
       drawProjectile(position);
    }

@@ -8,7 +8,8 @@
 #include "satellite.h"
 
 /******************************************************************************
- *
+ * Advance for Satellite.
+ * Randomly makes a satellite defunct. Can be thrown off of orbit more than once.
  ******************************************************************************/
 void Satellite::advance(const SimulatorObject & gravitySource)
 {
@@ -22,7 +23,8 @@ void Satellite::advance(const SimulatorObject & gravitySource)
 }
 
 /******************************************************************************
- *
+ * SPUTNIK:: HIT
+ * Kills  and adds to corrosponding fragments and parts on the screen.
  ******************************************************************************/
 void Sputnik::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -34,7 +36,8 @@ void Sputnik::hit(std::list<SimulatorObject*> & simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * * GPS:: HIT
+ * Kills  and adds to corrosponding fragments and parts on the screen.
  ******************************************************************************/
 void GPS::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -48,7 +51,8 @@ void GPS::hit(std::list<SimulatorObject*> & simulatorCollection)
 
 
 /******************************************************************************
- *
+ * HUBBLE:: HIT
+ * Kills and adds to corrosponding fragments and parts on the screen.
  ******************************************************************************/
 void Hubble::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -60,7 +64,8 @@ void Hubble::hit(std::list<SimulatorObject*> & simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * STARLINK:: HIT
+ * Kills and adds to corrosponding fragments and parts on the screen.
  ******************************************************************************/
 void StarLink::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -72,7 +77,8 @@ void StarLink::hit(std::list<SimulatorObject*> & simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * DRAGON:: HIT
+ * Kills and adds the corrospoding fragments and parts on the screen,
  ******************************************************************************/
 void Dragon::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
@@ -85,7 +91,8 @@ void Dragon::hit(std::list<SimulatorObject*> & simulatorCollection)
 }
 
 /******************************************************************************
- *
+ * DREAMCHASER:: APPLYINPUT
+ * Controls the ship based on user input.
  ******************************************************************************/
 void DreamChaser::applyInput(const Input & input)
 {
@@ -98,7 +105,8 @@ void DreamChaser::applyInput(const Input & input)
 }
 
 /******************************************************************************
- *
+ * DREAMCHASER::ADVANCE
+ * Moves the dream chaser foward one frame in the simualtion.
  ******************************************************************************/
 void DreamChaser::advance(const SimulatorObject & gravitySource)
 {
@@ -111,7 +119,8 @@ void DreamChaser::advance(const SimulatorObject & gravitySource)
 }
 
 /******************************************************************************
- *
+ * DREAM CHASER::HIT
+ * Destroys the ship and adds the corresponding pices and pragments on the screen. 
  ******************************************************************************/
 void DreamChaser::hit(std::list<SimulatorObject*> & simulatorCollection)
 {
